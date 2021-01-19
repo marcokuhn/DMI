@@ -5,7 +5,7 @@ Participants will learn and practice key aspects of the theory and practice of d
 
 Over the course of several iterations, concepts and ideas develop into refined functional design prototypes. Each iteration includes design, prototyping and evaluation phases, which ensures that the knowledge gained in earlier steps feeds back into the project.
 
-**Keywords:** Teensy, DaisyBoard, Arduino, Raspberry Pi,Touch controller, Max/Msp, SuperCollider, Human Computer Interaction, Gesture-based Instruments,…
+**Keywords:** Teensy, DaisyBoard, Arduino, Raspberry Pi, OSC, Touch controller, Max/Msp, SuperCollider, Human Computer Interaction, Gesture-based Instruments,…
 
 
 - [Designing Musical Instruments](#designing-musical-instruments)
