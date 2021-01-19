@@ -21,13 +21,16 @@ Over the course of several iterations, concepts and ideas develop into refined f
   
 
 ## Papers
+- [NIME proceedings](https://www.nime.org/archives/)
 - Musical Organics: A Heterarchical Approach to Digital Organology https://www.tandfonline.com/doi/pdf/10.1080/09298215.2017.1353636
 - An Epistemic Dimension Space for Musical Devices - https://www.researchgate.net/publication/228753446_An_Epistemic_Dimension_Space_for_Musical_Devices
 - Towards a Dimension Space for Musical Devices https://www.researchgate.net/publication/248128301_Towards_a_Dimension_Space_for_Musical_Devices
 - Post-DMI musical Instruments - https://www.researchgate.net/publication/311440624_Post-DMI_musical_Instruments
 - Towards a Coherent Terminology and Model of Instrument Description and Design - https://www.researchgate.net/publication/221164793_Towards_a_Coherent_Terminology_and_Model_of_Instrument_Description_and_Design
 - Gesture Based Interaction – https://www.billbuxton.com/input14.Gesture.pdf
- 
+- Infra-Instruments http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=8FB05F9ECC57F3436C56C2A13F262586?doi=10.1.1.59.1639&rep=rep1&type=pdf
+- John Richards, [Beyond DIY in Electronic Music](https://www.cambridge.org/core/journals/organised-sound/article/abs/beyond-diy-in-electronic-music/9B0273F67194DDA07295A761C9384CB0#) 
+- [one knob to rule them all](https://oneknobtorule.wordpress.com/)
 
 ## Conferences
 - NIME – The International Conference on New Interfaces for Musical Expression - https://www.nime.org
@@ -43,8 +46,19 @@ Over the course of several iterations, concepts and ideas develop into refined f
 - https://steim.org/
 - https://tamlab.ufg.at/
 - https://iem.kug.ac.at/institut-fuer-elektronische-musik-und-akustik-iem.html
+- [IMM Düsseldorf](https://www.rsh-duesseldorf.de/institute/institut-fuer-musik-und-medien)
+- http://instrumentslab.org London
 
+## Artists
+- Michel Waisvisz - [crackle](www.crackle.org)
+- [Laetitia Sonami](https://sonami.net)
+- Peter Blasser - [ciat-lonbarde](http://ciat-lonbarde.net)
+- Hans Tammen - www.tammen.org
+- John Richards, [dirtyelectronics](https://dirtyelectronics.org/)
+- [Jeff Carey](http://jeffcarey.foundation-one.org/)
+- [Atau Tanaka](https://www.gold.ac.uk/computing/people/tanaka-atau/)
 
- 
-  
-
+## Stores
+- Adafruit > very many tutorials
+- Sparkfun > many tutorials
+- https://www.kobakant.at/DIY/

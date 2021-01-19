@@ -1,5 +1,7 @@
 # Physical-Computing-Boards
 
+> state: early 2021
+
 - [Physical-Computing-Boards](#physical-computing-boards)
   - [Teensy](#teensy)
     - [Getting Started](#getting-started)
@@ -12,6 +14,8 @@
   - [BELA](#bela)
   - [Raspberry Pi](#raspberry-pi)
   - [D1 MINI – ESP8266](#d1-mini--esp8266)
+
+---------------
 
 ## Teensy
 <img src="https://forum.pjrc.com/teensy40_front.jpg" width="300">
@@ -132,7 +136,7 @@ Capable of audio playback and synthesis with appropriate (I2S) DACs, but esp. th
 - many [audio player projects](https://www.youtube.com/results?search_query=ESP8266+audio+player)
 
 ### ESP8266
-Smallest, most inexpensive chip from the ESP series; as cheap as 2€ per chip from Chinese sources! Think of large-scale use cases!-) 
+Smallest, most inexpensive chip from the ESP series; as cheap as <2€ per chip from Chinese sources! Think of large-scale use cases!-) 
 With only 1 ADC pin hardly suited for analog sensors, but fine for any peripherals commuicating via I2C / SPI bus. 
 
 #### ESP8266 ESP-01
@@ -144,7 +148,8 @@ smallest footprint, best for miniaturization/low energy projects.
 #### WEMOS D1 MINI 
 <img src="https://docs.wemos.cc/en/latest/_images/d1_mini_v3.1.0_1_16x16.jpg" width="200">
 
-larger, Breadboard-friendly version with 16 Pins: https://docs.wemos.cc/en/latest/d1/d1_mini.html. May inexpensive add-on sensorboards available from producer [Wemos](https://www.wemos.cc/en/latest/d1_mini_shield/index.html). 
+larger, Breadboard-friendly version with 16 Pins: https://docs.wemos.cc/en/latest/d1/d1_mini.html.
+<br> Many inexpensive add-on sensorboards available from producer [Wemos](https://www.wemos.cc/en/latest/d1_mini_shield/index.html). 
 
 ### ESP32
 
@@ -153,6 +158,6 @@ larger, Breadboard-friendly version with 16 Pins: https://docs.wemos.cc/en/lates
 #### ESP32 DevKit 
 <img src="https://www.olimex.com/Products/IoT/ESP32/ESP32-DevKit-LiPo/images/ESP32-DevKit-LiPo.jpg" width="200">
 
-[Olimex Version](https://www.exp-tech.de/plattformen/esp32/) includes LiPo charging circuit best suited for portable use.
+[Olimex Version](https://www.exp-tech.de/plattformen/esp32/) includes Li-Po accu charging circuit > very well suited for portable wireless applications.
 
 
