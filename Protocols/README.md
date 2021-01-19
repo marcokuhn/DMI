@@ -115,7 +115,7 @@ e.g. </br>
 - Value range (0 - 127)
 - Not backward compatible to MIDI
 
-#### Network Introduction
+### Network Introduction
 - Every computer in the network has an IP address. It will be assigned as soon as you connect to a network
 - each address has ports (channels). Communication takes place over these ports. For OSC Select an unreserved port e.g. > 9000.
 - A firewall can block certain ports. Make sure that the OSC ports are not blocked.
@@ -127,3 +127,13 @@ e.g. </br>
 
 - Open Mac > System Control > Network
 - Open Terminal > Ifconfig
+
+### Links
+- OSC - http://opensoundcontrol.org
+- Tunnel for sending data over different networks (internet) - https://ngrok.com
+- Max/Msp - ([OSC-Route],[o.route])
+  - https://cnmat.berkeley.edu/downloads
+    - ODOT (ODOT (OSC) objects)
+    - OSC-Route (CNMAT Externals) 
+
+
