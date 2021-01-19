@@ -1,5 +1,6 @@
 # Designing Musical Instruments
 
+
 Participants will learn and practice key aspects of the theory and practice of designing new musical instruments / interfaces with case studies including soft- and hardware-based instruments, sensor-based instruments, networked music making.
 
 Over the course of several iterations, concepts and ideas develop into refined functional design prototypes. Each iteration includes design, prototyping and evaluation phases, which ensures that the knowledge gained in earlier steps feeds back into the project.
@@ -7,6 +8,11 @@ Over the course of several iterations, concepts and ideas develop into refined f
 **Keywords:** Teensy, DaisyBoard, Arduino, Raspberry Pi,Touch controller, Max/Msp, SuperCollider, Human Computer Interaction, Gesture-based Instruments,…
 
 
+- [Designing Musical Instruments](#designing-musical-instruments)
+  - [Books](#books)
+  - [Papers](#papers)
+  - [Conferences](#conferences)
+  - [Institutes / Labs](#institutes--labs)
 
 ## Books
 - Instruments for New Music: Sound, Technology, and Modernism. California: University of California – https://www.luminosoa.org/site/books/m/10.1525/luminos.7/

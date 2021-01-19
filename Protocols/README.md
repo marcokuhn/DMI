@@ -1,6 +1,29 @@
 
 # DMI –  Protocols
 
+- [DMI –  Protocols](#dmi---protocols)
+  - [MIDI – Musical Instrument Digital Interface](#midi--musical-instrument-digital-interface)
+    - [HISTORY](#history)
+    - [DATA TRANSMISSION](#data-transmission)
+      - [STRUCTURE OF A MESSAGE](#structure-of-a-message)
+    - [MIDI INTERFACES](#midi-interfaces)
+    - [TOOLS](#tools)
+    - [LINKS](#links)
+  - [OSC – Open Sound Control Protocol](#osc--open-sound-control-protocol)
+    - [Examples of use](#examples-of-use)
+      - [Local communication](#local-communication)
+      - [Remote control](#remote-control)
+      - [Communication between computers](#communication-between-computers)
+    - [OSC data transmission](#osc-data-transmission)
+    - [Data types in OSC](#data-types-in-osc)
+    - [OSC messages](#osc-messages)
+    - [OSC vs. MIDI](#osc-vs-midi)
+      - [Advantages](#advantages)
+      - [Disadvantages](#disadvantages)
+    - [Network Introduction](#network-introduction)
+      - [My Local IP-Address](#my-local-ip-address)
+    - [Links](#links-1)
+
 ## MIDI – Musical Instrument Digital Interface
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Midi.png" width="250">
