@@ -13,11 +13,14 @@ Over the course of several iterations, concepts and ideas develop into refined f
   - [Papers](#papers)
   - [Conferences](#conferences)
   - [Institutes / Labs](#institutes--labs)
+  - [Artists](#artists)
+  - [Stores](#stores)
 
 ## Books
 - Instruments for New Music: Sound, Technology, and Modernism. California: University of California – https://www.luminosoa.org/site/books/m/10.1525/luminos.7/
 - Musical Instruments in the 21st Century- https://www.3dmin.org/publications/official-publication/
 - The Art of Noise - http://www.artype.de/Sammlung/pdf/russolo_noise.pdf
+- [ PUSH TURN MOVE](https://bjooks.com/products/push-turn-move-the-book)
   
 
 ## Papers
