@@ -181,5 +181,5 @@ Human Interface Device - The way the USB Port handles input devices from Mouse/K
 - only recommendable where sending double byte MIDI data is not convenient. 
 
 #### HID on Teensy
-https://www.pjrc.com/teensy/rawhid.html <br>
-tutorial: https://www.kobakant.at/DIY/?p=2497 
+- https://www.pjrc.com/teensy/rawhid.html 
+- tutorial: https://www.kobakant.at/DIY/?p=2497

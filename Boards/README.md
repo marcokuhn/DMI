@@ -135,7 +135,8 @@ Capable of audio playback and synthesis with appropriate (I2S) DACs, but esp. th
 Smallest, most inexpensive chip from the ESP series; as cheap as 2€ per chip from Chinese sources! Think of large-scale use cases!-) 
 
 #### ESP8266 ESP-01
-smallest footprint, best for miniaturization/low energy usage projects
+smallest footprint, best for miniaturization/low energy usage projects. 
+
 <img src="https://sc02.alicdn.com/kf/HTB12D1QbPfguuRjSspkq6xchpXas/231822115/HTB12D1QbPfguuRjSspkq6xchpXas.jpg
 " width="200">
 
