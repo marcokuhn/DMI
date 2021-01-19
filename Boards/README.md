@@ -122,28 +122,29 @@ overview (maybe not very fresh): https://wiki.linuxaudio.org/wiki/hardware_suppo
 
 ------------
 ## ESP Series
-popular, "new" Series of inexpensive Single-Board-computers targeted at IoT, Arduino compatible but with modern 32bit processor similar to Teensy, and WiFi & Bluetooth onboard (!), designed & made by chinese company ESPRESSIF. 
+Popular, "new" Series of inexpensive Single-Board-computers targeted at IoT, Arduino compatible but with modern 32bit processor similar to Teensy, and WiFi & Bluetooth onboard (!), designed & made by chinese company ESPRESSIF. 
 Large support base online, but not as good as for Arduino. 
 Well suited for inexpensive sensor devices that communicate via wireless OSC. 
 Capable of audio playback and synthesis with appropriate (I2S) DACs, but esp. the latter is rather poorly documented. 
 
-### Example Audio Projects
+#### Example Audio Projects
 - drum machine https://zircothc.wordpress.com/
 - many [audio player projects](https://www.youtube.com/results?search_query=ESP8266+audio+player)
 
 ### ESP8266
 Smallest, most inexpensive chip from the ESP series; as cheap as 2€ per chip from Chinese sources! Think of large-scale use cases!-) 
+With only 1 ADC pin hardly suited for analog sensors, but fine for any peripherals commuicating via I2C / SPI bus. 
 
 #### ESP8266 ESP-01
-smallest footprint, best for miniaturization/low energy usage projects. 
+<img src="https://ae01.alicdn.com/kf/HTB1mwr2NFXXXXc4XpXXq6xXFXXXn/ESP8266-ESP-01-ESP8266-WIFI-module-Serial-Wi-Fi-Wireless-Transceiver-Module-for-Arduino.jpg" width="200">
 
-<img src="https://sc02.alicdn.com/kf/HTB12D1QbPfguuRjSspkq6xchpXas/231822115/HTB12D1QbPfguuRjSspkq6xchpXas.jpg
-" width="200">
+smallest footprint, best for miniaturization/low energy projects. 
+
 
 #### WEMOS D1 MINI 
 <img src="https://docs.wemos.cc/en/latest/_images/d1_mini_v3.1.0_1_16x16.jpg" width="200">
 
-larger, Breadboard-friendly version with 16 Pins: https://docs.wemos.cc/en/latest/d1/d1_mini.html
+larger, Breadboard-friendly version with 16 Pins: https://docs.wemos.cc/en/latest/d1/d1_mini.html. May inexpensive add-on sensorboards available from producer [Wemos](https://www.wemos.cc/en/latest/d1_mini_shield/index.html). 
 
 ### ESP32
 
