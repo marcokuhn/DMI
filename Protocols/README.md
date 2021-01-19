@@ -18,14 +18,14 @@
     - [Data types in OSC](#data-types-in-osc)
     - [OSC messages](#osc-messages)
     - [OSC vs. MIDI](#osc-vs-midi)
-      - [Advantages](#advantages)
-      - [Disadvantages](#disadvantages)
+      - [Pros](#Pros)
+      - [Cons](#Cons)
     - [Network Introduction](#network-introduction)
       - [My Local IP-Address](#my-local-ip-address)
     - [Links](#links-1)
   - [USB HID](#usb-hid)
-      - [Advantages](#advantages-1)
-      - [Disadvantages](#disadvantages-1)
+      - [Pros](#Pros-1)
+      - [Cons](#Cons-1)
       - [HID on Teensy:](#hid-on-teensy)
 
 
@@ -129,7 +129,7 @@ e.g. </br>
 
 ### OSC vs. MIDI
 
-#### Advantages
+#### Pros
 - faster data transfer - max. is network datatransmission rate
 - datatype is not limited to 7-bit - supports Int, float, complex data types - http://opensoundcontrol.org/spec-1_0
 - OSC is sent over the network (Internet, Wlan)
@@ -137,7 +137,7 @@ e.g. </br>
 - you can define own data types
 - Integration and control of hardware is easier as MIDI SysEx messages
 
-#### Disadvantages
+#### Cons
 - No standardization of the parameters as with the MIDI protocol (e.g. Note-On,CC,...)
 - Address (sender and receiver need to make an handshake) 
 - Value range (0 - 127)
@@ -168,18 +168,18 @@ e.g. </br>
 ## USB HID
 Human Interface Device - The way the USB Port handles input devices from Mouse/KB to Joysticks, Gaming to medical assistance devices. 
 
-#### Advantages
+#### Pros
 - highly robust, plug&play wired interface
 - cross platform: works automatically with built-in drivers. 
 - can transmit 64byte packages - best for high-res. sensor data, where MIDI's 7 bit are often too coarse. 
 - MAX./PD/SC and more SW toolkits can read generic HID
 - emulate Gamepads etc.
-- Teensy suppoert USB Modes for both MIDI and HID
+- Teensy supports USB Modes for both MIDI and HID, as well as Keyboard and Mouse Emulation. 
 
-#### Disadvantages
+#### Cons
 - difficult, intransparent protocol
-- only recommended where sending double byte MIDI data is not convenient. 
+- only recommendable where sending double byte MIDI data is not convenient. 
 
-#### HID on Teensy:
-https://www.pjrc.com/teensy/rawhid.html
+#### HID on Teensy
+https://www.pjrc.com/teensy/rawhid.html <br>
 tutorial: https://www.kobakant.at/DIY/?p=2497 
