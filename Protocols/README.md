@@ -161,16 +161,20 @@ e.g. </br>
 
 
 ## USB HID
-Human Interface Device - The Way the USB Port handles input devices from Mouse/KB to Joysticks, Gaming devices to medical assistance devices. 
+Human Interface Device - The way the USB Port handles input devices from Mouse/KB to Joysticks, Gaming to medical assistance devices. 
 
 #### Advantages
-- highly robust, plug&play
-- cross platform
-- can transmit 10bit numbers - sufficient for most sensor data, where MIDI's 7 bit are often too coarse
+- highly robust, plug&play wired interface
+- cross platform: works automatically with built-in drivers. 
+- can transmit 64byte packages - best for high-res. sensor data, where MIDI's 7 bit are often too coarse. 
 - MAX./PD/SC and more SW toolkits can read generic HID
-- emulate Gamepads etc
+- emulate Gamepads etc.
 - Teensy suppoert USB Modes for both MIDI and HID
 
 #### Disadvantages
 - difficult, intransparent protocol
-- 
+- only recommended where sending double byte MIDI data is not convenient. 
+
+#### HID on Teensy:
+https://www.pjrc.com/teensy/rawhid.html
+tutorial: https://www.kobakant.at/DIY/?p=2497 
