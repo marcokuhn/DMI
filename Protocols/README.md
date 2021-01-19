@@ -23,6 +23,11 @@
     - [Network Introduction](#network-introduction)
       - [My Local IP-Address](#my-local-ip-address)
     - [Links](#links-1)
+  - [USB HID](#usb-hid)
+      - [Advantages](#advantages-1)
+      - [Disadvantages](#disadvantages-1)
+      - [HID on Teensy:](#hid-on-teensy)
+
 
 ## MIDI – Musical Instrument Digital Interface
 
