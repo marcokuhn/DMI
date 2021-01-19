@@ -160,3 +160,17 @@ e.g. </br>
     - OSC-Route (CNMAT Externals) 
 
 
+## USB HID
+Human Interface Device - The Way the USB Port handles input devices from Mouse/KB to Joysticks, Gaming devices to medical assistance devices. 
+
+#### Advantages
+- highly robust, plug&play
+- cross platform
+- can transmit 10bit numbers - sufficient for most sensor data, where MIDI's 7 bit are often too coarse
+- MAX./PD/SC and more SW toolkits can read generic HID
+- emulate Gamepads etc
+- Teensy suppoert USB Modes for both MIDI and HID
+
+#### Disadvantages
+- difficult, intransparent protocol
+- 
