@@ -5,7 +5,7 @@ Participants will learn and practice key aspects of the theory and practice of d
 
 Over the course of several iterations, concepts and ideas develop into refined functional design prototypes. Each iteration includes design, prototyping and evaluation phases, which ensures that the knowledge gained in earlier steps feeds back into the project.
 
-**Keywords:** Teensy, DaisyBoard, Arduino, Raspberry Pi, OSC, Touch controller, Max/Msp, SuperCollider, Human Computer Interaction, Gesture-based Instruments,…
+**Keywords:** Teensy, DaisyBoard, Bela, Raspberry Pi, Arduino, OSC, Touch controller, Max/Msp, SuperCollider, Human Computer Interaction, Gesture-based Instruments, …
 
 
 - [Designing Musical Instruments](#designing-musical-instruments)
@@ -19,8 +19,8 @@ Over the course of several iterations, concepts and ideas develop into refined f
 ## Books
 - Instruments for New Music: Sound, Technology, and Modernism. California: University of California – https://www.luminosoa.org/site/books/m/10.1525/luminos.7/
 - Musical Instruments in the 21st Century- https://www.3dmin.org/publications/official-publication/
-- The Art of Noise - http://www.artype.de/Sammlung/pdf/russolo_noise.pdf
 - [ PUSH TURN MOVE](https://bjooks.com/products/push-turn-move-the-book)
+- Classic: The Art of Noise - http://www.artype.de/Sammlung/pdf/russolo_noise.pdf
   
 
 ## Papers
@@ -50,7 +50,6 @@ Over the course of several iterations, concepts and ideas develop into refined f
 - https://tamlab.ufg.at/
 - https://iem.kug.ac.at/institut-fuer-elektronische-musik-und-akustik-iem.html
 - [IMM Düsseldorf](https://www.rsh-duesseldorf.de/institute/institut-fuer-musik-und-medien)
-- http://instrumentslab.org London
 
 ## Artists
 - Michel Waisvisz - [crackle](www.crackle.org)
@@ -60,6 +59,7 @@ Over the course of several iterations, concepts and ideas develop into refined f
 - John Richards, [dirtyelectronics](https://dirtyelectronics.org/)
 - [Jeff Carey](http://jeffcarey.foundation-one.org/)
 - [Atau Tanaka](https://www.gold.ac.uk/computing/people/tanaka-atau/)
+- [Imogen Heap](http://imogenheap.com/myceliatour.php)
 
 ## Stores
 - Adafruit > very many tutorials
