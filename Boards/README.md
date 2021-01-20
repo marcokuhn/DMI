@@ -8,12 +8,18 @@
     - [Audio](#audio)
     - [WIFI Extension](#wifi-extension)
     - [Building a Synth with Teensy](#building-a-synth-with-teensy)
-    - [Examples](#examples)
+    - [Example Audio Projects](#example-audio-projects)
   - [DAISY Board](#daisy-board)
   - [AXOLOTI Board](#axoloti-board)
   - [BELA](#bela)
   - [Raspberry Pi](#raspberry-pi)
-  - [D1 MINI – ESP8266](#d1-mini--esp8266)
+  - [ESP Series](#esp-series)
+      - [Example Audio Projects](#example-audio-projects-1)
+    - [ESP8266](#esp8266)
+      - [ESP8266 ESP-01](#esp8266-esp-01)
+      - [WEMOS D1 MINI](#wemos-d1-mini)
+    - [ESP32](#esp32)
+      - [ESP32 DevKit](#esp32-devkit)
 
 ---------------
 

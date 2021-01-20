@@ -18,15 +18,15 @@
     - [Data types in OSC](#data-types-in-osc)
     - [OSC messages](#osc-messages)
     - [OSC vs. MIDI](#osc-vs-midi)
-      - [Pros](#Pros)
-      - [Cons](#Cons)
+      - [Pros](#pros)
+      - [Cons](#cons)
     - [Network Introduction](#network-introduction)
       - [My Local IP-Address](#my-local-ip-address)
     - [Links](#links-1)
   - [USB HID](#usb-hid)
-      - [Pros](#Pros-1)
-      - [Cons](#Cons-1)
-      - [HID on Teensy:](#hid-on-teensy)
+      - [Pros](#pros-1)
+      - [Cons](#cons-1)
+      - [HID on Teensy](#hid-on-teensy)
 
 
 ## MIDI – Musical Instrument Digital Interface
