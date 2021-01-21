@@ -68,7 +68,15 @@ https://www.youtube.com/watch?v=-2B4Dmy4J1Y
   - https://www.pjrc.com/sensei-multidimensional-sound-synthesizer/
 - Polaron is a DIY digital drum machine
   - https://github.com/zueblin/Polaron
-   
+- Otem Relik - Projects
+  - [otem rellik](http://www.otemrellik.com)
+  - http://www.otemrellik.com/rdei/
+  - https://github.com/otem/teensypolysynth
+- Tsynth - ElectroTechnique
+  - http://electrotechnique.cc
+
+
+
 ------------
 
 ## DAISY Board
