@@ -20,6 +20,7 @@ Over the course of several iterations, concepts and ideas develop into refined f
 - Instruments for New Music: Sound, Technology, and Modernism. California: University of California – https://www.luminosoa.org/site/books/m/10.1525/luminos.7/
 - Musical Instruments in the 21st Century- https://www.3dmin.org/publications/official-publication/
 - [ PUSH TURN MOVE](https://bjooks.com/products/push-turn-move-the-book)
+- Exotic/experimental acoustic Instrument Design: Hopkin, B. Musical Instrument Design. See Sharp Press,Tucson, Arizona, 1996.
 - Classic: The Art of Noise - http://www.artype.de/Sammlung/pdf/russolo_noise.pdf
   
 
@@ -31,7 +32,7 @@ Over the course of several iterations, concepts and ideas develop into refined f
 - Post-DMI musical Instruments - https://www.researchgate.net/publication/311440624_Post-DMI_musical_Instruments
 - Towards a Coherent Terminology and Model of Instrument Description and Design - https://www.researchgate.net/publication/221164793_Towards_a_Coherent_Terminology_and_Model_of_Instrument_Description_and_Design
 - Gesture Based Interaction – https://www.billbuxton.com/input14.Gesture.pdf
-- Infra-Instruments http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=8FB05F9ECC57F3436C56C2A13F262586?doi=10.1.1.59.1639&rep=rep1&type=pdf
+- Bowers, Archer, Infra-Instruments http://www.philarcher.net/main/writing_files/HyperMetaCyberInfra_BowersArcher.pdf
 - John Richards, [Beyond DIY in Electronic Music](https://www.cambridge.org/core/journals/organised-sound/article/abs/beyond-diy-in-electronic-music/9B0273F67194DDA07295A761C9384CB0#) 
 - [one knob to rule them all](https://oneknobtorule.wordpress.com/)
 
