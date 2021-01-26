@@ -175,3 +175,14 @@ larger, Breadboard-friendly version with 16 Pins: https://docs.wemos.cc/en/lates
 [Olimex Version](https://www.exp-tech.de/plattformen/esp32/) includes Li-Po accu charging circuit > very well suited for portable wireless applications.
 
 
+------------
+
+## Others
+
+### Digilent [CMOD A7-35T](https://store.digilentinc.com/cmod-a7-breadboardable-artix-7-fpga-module/)
+FPGA, USB, SRAM
+
+>"not for beginners!"
+
+#### Example Audio Project
+https://www.futur3soundz.com/xfm2
