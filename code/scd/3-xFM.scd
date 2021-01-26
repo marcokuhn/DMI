@@ -41,12 +41,12 @@ Spec.add(\index2, [0, 1000, 5]);
 
 
 
-// better rename the modules for symmetry - same topologiey.
+// better rename/refactor the modules for symmetry - same topology.
 (
 Ndef(\xfm1, { arg freqA = 32, freqB = 9, modAtoB=540, modBtoA=240;
 	var fbIn = LocalIn.ar(2);
 	var sigB = SinOsc.ar(freqB + (fbIn[0] * modAtoB));
-	var sigA = SinOsc.ar(freqA + (sigB    * modBtoA));
+	var sigA = SinOsc.ar(freqA + (fbIn[1] * modBtoA));
 	LocalOut.ar([sigA, sigB]);
 	[sigA, sigB] * 0.5;
 }).play;
@@ -56,4 +56,17 @@ Spec.add(\freqB, [1, 10000, \exp]);
 Spec.add(\modBtoA, [0, 1000, 5]);
 Spec.add(\modAtoB, [0, 1000, 5]);
 
+
+
+// re-write in Array-style to be more concise (and less readable:)
+(
+Ndef(\xfm1, { arg freqA = 32, freqB = 9, modAtoB=540, modBtoA=240;
+	var fbIn = LocalIn.ar(2);
+	var sigs = SinOsc.ar([freqA, freqB] + (fbIn.reverse * [modBtoA, modAtoB]));
+	LocalOut.ar(sigs);
+	sigs * 0.5;
+}).play;
+);
+
+// ToDo: map to MIDI, ...
 
