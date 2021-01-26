@@ -21,7 +21,7 @@
 
 // tweak vars
 const int channel = 1;
-const int framesPerSec = 50; // rate of measurements - 50 per sec is usually sufficient.
+const int framesPerSec = 10; // rate of measurements - 50 per sec is usually sufficient.
 boolean doSerial = true;
 
 // internal vars
@@ -29,12 +29,17 @@ const byte numReads = 4;
 const int analogPins[] = { A0, A1, A2, A3 };
 const int ccs[] = { 0, 1, 2, 3 }; // send these CC nums
 int prevVals[numReads] = {}; // cache previous readings
+float minima[numReads] = {}; // min vals
+float maxima[numReads] = {}; // max vals
 
 void setup() {
   Serial.begin(38400); // fast Serial port
+      Serial.println("HELLO WORLD: \n\n 4 analogs to midi, autocalibrating \n\n\n");
 
   for (byte i = 0; i <= numReads; i++) {
     prevVals[i] = -1;  // fill prevVals
+    minima[i] = 1.;
+    maxima[i] = 0.0;
   }
 }
 
@@ -43,31 +48,60 @@ elapsedMillis msec = 0;
 void loop() {
   // only check the analog inputs at 'framesPerSec' rate
   // to prevent a flood of MIDI messages
+
   if (msec >= 1000 / framesPerSec) {
     msec = 0;
 
-    Serial.print("MIDI vals: ");  // print it on the Serial console
 
-    for (byte i = 0; i <= numReads; i++) {
-      int readVal = analogRead(analogPins[i]);  // keep it full res
-      float curve = pow((readVal / 128.), 0.5); // square root curve for better res. in low range.
-      int sendVal = constrain(int(curve * 128.0), 0, 127);         // back to int, make sure it doies not exceed legal MIDI ranges
+    digitalWrite(13, random(2));
 
-      // only transmit MIDI messages if analog input changed
+    if (doSerial) { // serial may be switched off.
+      Serial.println("MIDI vals: ");  // print it on the Serial console
+    }
+
+    for (byte i = 0; i < numReads; i++) {
+      float readVal = analogRead(analogPins[i]) / 1024.;  // keep it full res, range 0 to 1.
+      // autocal:
+      if (readVal < minima[i]) {
+        minima[i] = readVal;
+      }
+      if (readVal > maxima[i]) {
+        maxima[i] = readVal;
+      }
+      // remap the readVal
+      float calVal = map(readVal, minima[i], maxima[i], 0.0, 1.0);
+
+      // square root curve for better res. in low range.
+      float curve = pow((calVal), 0.5);
+      // back to int, make sure it does not exceed legal MIDI ranges
+      int sendVal = constrain(int(curve * 128.0), 0, 127);
+      // only transmit MIDI messages if sendVal really changed.
       if (sendVal != prevVals[i]) {
         usbMIDI.sendControlChange(ccs[i], sendVal, channel);
 
         if (doSerial) { // serial may be switched off.
-          Serial.print("\tCC " );
-          Serial.print( ccs[i]);
-          Serial.print( ": " );
-          Serial.print( readVal );
+          //          Serial.print("\tCC " );
+          //          Serial.print( ccs[i]);
+          //          Serial.print( ": " );
+          //          Serial.print( sendVal );
+
         }
         prevVals[i] = sendVal;
       }
-    }
-    if (doSerial) {
-      Serial.println("");
+
+      if (doSerial) {
+        // debug only
+        Serial.print("CC " );
+        Serial.print( ccs[i]);
+        Serial.print("\tmin " );
+        Serial.print( minima[i]);
+        Serial.print("\tmax " );
+        Serial.print( maxima[i]);
+        Serial.print( "\tsend: " );
+        Serial.print( sendVal );
+
+        Serial.println("");
+      }
     }
   }
 
