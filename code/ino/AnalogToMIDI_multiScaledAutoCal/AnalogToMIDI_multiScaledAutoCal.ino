@@ -21,8 +21,8 @@
 
 // tweak vars
 const int channel = 1;
-const int framesPerSec = 10; // rate of measurements - 50 per sec is usually sufficient.
-boolean doSerial = true;
+const int framesPerSec = 66; // rate of measurements - 50 per sec is usually sufficient.
+boolean doSerial = false;
 
 // internal vars
 const byte numReads = 4;
@@ -31,15 +31,20 @@ const int ccs[] = { 0, 1, 2, 3 }; // send these CC nums
 int prevVals[numReads] = {}; // cache previous readings
 float minima[numReads] = {}; // min vals
 float maxima[numReads] = {}; // max vals
+int dt = 1000 / framesPerSec;
+int readInt;
+float readVal;
 
 void setup() {
   Serial.begin(38400); // fast Serial port
-      Serial.println("HELLO WORLD: \n\n 4 analogs to midi, autocalibrating \n\n\n");
+  Serial.print("HELLO WORLD: \n\n 4 analogs to midi, autocalibrating \n\n\n Serial posting is ");
+  Serial.println(doSerial);
 
-  for (byte i = 0; i <= numReads; i++) {
+
+  for (byte i = 0; i < numReads; i++) {
     prevVals[i] = -1;  // fill prevVals
     minima[i] = 1.;
-    maxima[i] = 0.0;
+    maxima[i] = 0.;
   }
 }
 
@@ -49,18 +54,18 @@ void loop() {
   // only check the analog inputs at 'framesPerSec' rate
   // to prevent a flood of MIDI messages
 
-  if (msec >= 1000 / framesPerSec) {
+  if (msec >= dt) {
     msec = 0;
 
-
-    digitalWrite(13, random(2));
+    //    digitalWrite(13, random(10) < 2);
 
     if (doSerial) { // serial may be switched off.
       Serial.println("MIDI vals: ");  // print it on the Serial console
     }
 
     for (byte i = 0; i < numReads; i++) {
-      float readVal = analogRead(analogPins[i]) / 1024.;  // keep it full res, range 0 to 1.
+       readInt = analogRead(analogPins[i]);  // keep it full res, range 0 to 1.
+       readVal = readInt / 1024.;
       // autocal:
       if (readVal < minima[i]) {
         minima[i] = readVal;
@@ -78,14 +83,6 @@ void loop() {
       // only transmit MIDI messages if sendVal really changed.
       if (sendVal != prevVals[i]) {
         usbMIDI.sendControlChange(ccs[i], sendVal, channel);
-
-        if (doSerial) { // serial may be switched off.
-          //          Serial.print("\tCC " );
-          //          Serial.print( ccs[i]);
-          //          Serial.print( ": " );
-          //          Serial.print( sendVal );
-
-        }
         prevVals[i] = sendVal;
       }
 
@@ -93,6 +90,8 @@ void loop() {
         // debug only
         Serial.print("CC " );
         Serial.print( ccs[i]);
+        Serial.print("\treadInt " );
+        Serial.print( readInt );
         Serial.print("\tmin " );
         Serial.print( minima[i]);
         Serial.print("\tmax " );
