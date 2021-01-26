@@ -9,7 +9,7 @@
 
     send analog reading out as MIDI
 
-   !! You must select MIDI from the "Tools > USB Type" menu
+   !! You must select "Serial + MIDI" from the "Tools > USB Type" menu
    http://www.pjrc.com/teensy/td_midi.html
 
    This example code is in the public domain.

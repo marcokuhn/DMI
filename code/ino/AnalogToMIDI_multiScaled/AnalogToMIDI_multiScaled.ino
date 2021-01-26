@@ -7,7 +7,7 @@
     Connect a wire each to A0 (14), A1, A2, A3 = 15, 16, 17,
     GND (25) and 3,3V (24).
     a high Ohm resistor (~1MOhm) between Ax and GND
-    "measure resistance" by touching your hand between the hot pin and V+.
+    "measure resistance" by touching your hand on both the "hot" pin and V+. Or connect V+ to a wristband...
 
     send analog reading out as MIDI
 
