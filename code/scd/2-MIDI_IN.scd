@@ -13,6 +13,9 @@ MIDIFunc.trace;        // trace on
 MIDIFunc.trace(false); // trace off
 
 
+// now evaluate MIDI ins specifically;
+// this one matches to the Teensy sketch "AnalogToMIDI_multi.ino"
+
 // we use MIDIdef, as we can overwrite/rewrite the Function
 
 // basic post-all test, matching our Teensy Example.
@@ -24,8 +27,9 @@ MIDIdef.cc(\test,  { arg val, cc, chan, source;
 }, (0..3), 0);
 
 // silent..
-MIDIdef.cc(\test,  {arg val, cc, chan, source; }, (0..3), 0);
-
+MIDIdef.cc(\test).disable;
+MIDIdef.cc(\test).enable;     // on again
+MIDIdef.cc(\test).disable;    // and off agin.
 
 // SOUND!!
 
