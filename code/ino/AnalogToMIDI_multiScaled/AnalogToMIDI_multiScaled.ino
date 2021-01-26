@@ -9,7 +9,9 @@
     a high Ohm resistor (~1MOhm) between Ax and GND
     "measure resistance" by touching your hand on both the "hot" pin and V+. Or connect V+ to a wristband...
 
-    send analog reading out as MIDI
+    - scale to make low range more sensitive BEFORE sending out MIDI!
+    
+    send analog readings out as MIDI
 
    !! You must select MIDI from the "Tools > USB Type" menu
    http://www.pjrc.com/teensy/td_midi.html
@@ -39,7 +41,7 @@ elapsedMillis msec = 0;
 void loop() {
   // only check the analog inputs at 'framesPerSec' rate
   // to prevent a flood of MIDI messages
-  if (msec >= 1000/framesPerSec) {
+  if (msec >= 1000 / framesPerSec) {
     msec = 0;
 
     Serial.print("MIDI vals: ");  // print it on the Serial console
@@ -49,12 +51,12 @@ void loop() {
       // only transmit MIDI messages if analog input changed
       if (readVal != prevVals[i]) {
         usbMIDI.sendControlChange(ccs[i], readVal, channel);
-        
+
         Serial.print("\tCC " );
         Serial.print( ccs[i]);
         Serial.print( ": " );
         Serial.print( readVal );
-        
+
         prevVals[i] = readVal;
       }
     }
