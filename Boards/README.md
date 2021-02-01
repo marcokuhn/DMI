@@ -1,5 +1,7 @@
 # Physical-Computing-Boards
 
+With special focus on usage for **D**igital **M**usic **I**nstruments
+
 > state: early 2021
 
 - [Physical-Computing-Boards](#physical-computing-boards)
@@ -11,8 +13,9 @@
     - [Example Audio Projects](#example-audio-projects)
   - [DAISY Board](#daisy-board)
   - [AXOLOTI Board](#axoloti-board)
-  - [BELA](#bela)
   - [Raspberry Pi](#raspberry-pi)
+  - [BELA](#bela)
+  - [ELK OS](#elk-os)
   - [ESP Series](#esp-series)
       - [Example Audio Projects](#example-audio-projects-1)
     - [ESP8266](#esp8266)
@@ -20,6 +23,13 @@
       - [WEMOS D1 MINI](#wemos-d1-mini)
     - [ESP32](#esp32)
       - [ESP32 DevKit](#esp32-devkit)
+      - [LILYGO TTGO T-Audio Board](#lilygo-ttgo-t-audio-board)
+      - [ESP32-LyraT-V4](#esp32-lyrat-v4)
+  - [Others](#others)
+    - [Digilent CMOD A7-35T](#digilent-cmod-a7-35t)
+      - [Example Audio Project](#example-audio-project)
+  - [SW](#sw)
+    - [FAUST](#faust)
 
 ---------------
 
@@ -96,24 +106,9 @@ http://www.axoloti.com/
 
 - specialized microcontroller for audio and sensor input; 
 - free patch-based editor, load patches via USB; Opcodes extensible via Assembler-like code. 
+- 32bit audio, 16 samples buffer size
 - Stereo I/O, MIDI I/O, SD card slot, USB MIDI Host onboard.
 - rather low price for the integrated HW, free SW. 
-
-------------
-## BELA
-![BELA Board](https://bela.io/images/products/bela.png "BELA")
-https://bela.io
-
-+ Addon Board for Linux based Beaglebone single-board-computers (similar to Paspi) with higly optimized audio I/O for very low latency, many channels supported. Direct, high-res Analog Sensor inputs: 
-Well suited for fast reacting devices programmed in high-level prog. languages like 
-  - PD
-  - SC
-  - C++
-  - Faust
-  Integrated Browser-based IDE for C++ and SC. 
-- rather expensive
-- [TRILL](https://bela.io/products/trill/) is a set of great hi-res capacitive sensors (not only) for Bela.
-- [Project archive](https://blog.bela.io/archive/)
 
 ------------
 
@@ -139,11 +134,43 @@ overview (maybe not very fresh): https://wiki.linuxaudio.org/wiki/hardware_suppo
     - overview: https://elinux.org/index.php?title=RPi_Expansion_Boards#Sound 
 
 ------------
+## BELA
+![BELA Board](https://bela.io/images/products/bela.png "BELA")
+https://bela.io
+
++ Addon Board for Linux based Beaglebone single-board-computers (similar to Paspi) with higly optimized audio I/O for very low latency, many channels supported. Direct, high-res Analog Sensor inputs: 
+Well suited for fast reacting devices programmed in high-level prog. languages like 
+  - PD
+  - SC
+  - C++
+  - Faust
+  Integrated Browser-based IDE for C++ and SC. 
+- rather expensive
+- [TRILL](https://bela.io/products/trill/) is a set of great hi-res capacitive sensors (not only) for Bela.
+- [Project archive](https://blog.bela.io/archive/)
+
+------------
+
+## ELK OS
+> "The World’s Fastest Audio Operating System" 
+ 
+![ELK Board](https://elk.audio/wp-content/uploads/2019/11/IMG_1369-2.jpg "ELK")
+
+https://elk.audio
+
+Ultra-low-latency (1ms round-trip) HW/SW bundle based on Paspberry Pi + custom board + Raspi Linux Image + tons of pre-compiled plugins/synths; VST Plugin Support
+
+------------
+
 ## ESP Series
 Popular, "new" Series of inexpensive Single-Board-computers targeted at IoT, Arduino compatible but with modern 32bit processor similar to Teensy, and WiFi & Bluetooth onboard (!), designed & made by chinese company ESPRESSIF. 
 Large support base online, but not as good as for Arduino. 
 Well suited for inexpensive sensor devices that communicate via wireless OSC. 
-Capable of audio playback and synthesis with appropriate (I2S) DACs, but esp. the latter is rather poorly documented. 
+Capable of audio playback and synthesis with appropriate (I2S) DACs. 
+
+  Espressif's [Audio Development SDK](https://github.com/espressif/esp-adf) is rather focussed on recording/playback of audio files/streams, supporting many SW codecs & protocols. Targeted use-cases tend to include file recorders/players, web streamers, smart speakers, Voice Services, speech recognition etc, but audio synthesis/processing are perfectly possible. [FAUST](#faust) (see below) development is recommended for that. 
+ 
+
 
 #### Example Audio Projects
 - drum machine https://zircothc.wordpress.com/
@@ -173,5 +200,90 @@ larger, Breadboard-friendly version with 16 Pins: https://docs.wemos.cc/en/lates
 <img src="https://www.olimex.com/Products/IoT/ESP32/ESP32-DevKit-LiPo/images/ESP32-DevKit-LiPo.jpg" width="200">
 
 [Olimex Version](https://www.exp-tech.de/plattformen/esp32/) includes Li-Po accu charging circuit > very well suited for portable wireless applications.
+
+
+#### LILYGO TTGO T-Audio Board
+
+< 20€ DEv Kit board incl. 
+- ESP32-WROVER module, 
+- Audio I/O codec (WM8978) incl.
+  - stereo mic pre-amps
+  - stereo amp
+- Mic
+- 9-DOF IMU (MPU9250) 
+- WS2812B RGB LED
+- SD card slot
+- & more. 
+https://www.tindie.com/products/ttgo/lilygor-ttgo-taudio-v16-esp32-wrover/
+<img src="https://faustcloud.grame.fr/doc/tutorials/img/esp32.jpg">
+
+
+example projects/tutorials:
+
+- https://faustcloud.grame.fr/doc/tutorials/index.html#dsp-on-the-esp32-with-faust
+  
+
+#### ESP32-LyraT-V4
+
+
+Espressif's own Audio Development board, with similar features integration like LilyGo above, ca. 15€
+
+![lyra pic](https://www.heise.de/imgs/18/2/9/7/1/5/7/7/esp32-lyrat-v4.3-layout-321ca75e2fc9f50b.jpg)
+
+https://www.heise.de/news/ESP32-LyraT-V4-3-Soundmodul-mit-ESP32-4906420.html
+
+------------
+
+## Others
+
+### Digilent [CMOD A7-35T](https://store.digilentinc.com/cmod-a7-breadboardable-artix-7-fpga-module/)
+FPGA (Field-programmable gate array) dev board with USB, SRAM
+
+>"not for beginners!"
+
+#### Example Audio Project
+https://www.futur3soundz.com/xfm2
+
+------------
+
+## SW
+### FAUST
+
+A Functional Programming Language for Real Time Signal Processing 
+https://faust.grame.fr/
+
+Features:
+
+- Functional programming paradigm (very different syntax from all imperative languages)
+- "Meta-language" with a compiler that "translates" DSP code to a wide range of non-domain specific languages such as 
+  
+  - C++, 
+  - C, 
+  - JAVA, 
+  - JavaScript, 
+  - LLVM bit code, 
+  - WebAudio, WebAssembly, etc.
+- Support for many *"architectures"*, i.e.
+  - Linux, OSX, Win, 
+  - Android, iOS
+  - Teensy (best with floating point support: 3.6, 4.0, 4.1)
+  - ESP32
+  - FPGA boards
+- direct module export as Plugins/Opcodes/Ugens for
+  - SC
+  - MAX/Msp
+  - PD
+  - csound
+  - VST for MACOS
+  -  .. 
+
+
+
+Links:
+
+- web editor with plenty of samples: <br> https://faustide.grame.fr/
+- tutorial: <br>  https://ccrma.stanford.edu/~rmichon/faustTutorials
+- youtube: <br> https://www.youtube.com/watch?v=2lEt7dsziO0
+- Workshop: Making Low Latency Guitar Pedals and Synthesizer Modules<br>  https://ccrma.stanford.edu/workshops/faust-embedded-19
 
 
