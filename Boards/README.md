@@ -283,7 +283,8 @@ Links:
 
 - web editor with plenty of samples: <br> https://faustide.grame.fr/
 - tutorial: <br>  https://ccrma.stanford.edu/~rmichon/faustTutorials
+- web playground! https://faustplayground.grame.fr/
 - youtube: <br> https://www.youtube.com/watch?v=2lEt7dsziO0
 - Workshop: Making Low Latency Guitar Pedals and Synthesizer Modules<br>  https://ccrma.stanford.edu/workshops/faust-embedded-19
 
-
+- ToDo: ESP and Teensy tutorials!
