@@ -262,6 +262,8 @@ http://www.wekinator.org/
 Linux audio package, slightly outdeted.
 http://ccrma.stanford.edu/planetccrma/software/planetccrma.html
 
+------------
+
 ### FAUST
 
 A Functional Programming Language for Real Time Signal Processing 
@@ -301,7 +303,6 @@ Links:
 - tutorial: <br>  https://ccrma.stanford.edu/~rmichon/faustTutorials
 - youtube: <br> https://www.youtube.com/watch?v=2lEt7dsziO0
 - Workshop: Making Low Latency Guitar Pedals and Synthesizer Modules<br>  https://ccrma.stanford.edu/workshops/faust-embedded-19
-<<<<<<< HEAD
 - ••••••
 - Faust for µC's overview: https://ccrma.stanford.edu/~rmichon/faustMicro/
 - Faust for Teensy: https://faustdoc.grame.fr/tutorials/teensy/ <br>
