@@ -25,10 +25,11 @@ With special focus on usage for **D**igital **M**usic **I**nstruments
       - [ESP32 DevKit](#esp32-devkit)
       - [LILYGO TTGO T-Audio Board](#lilygo-ttgo-t-audio-board)
       - [ESP32-LyraT-V4](#esp32-lyrat-v4)
-  - [Others](#others)
+  - [FPGA](#fpga)
     - [Digilent CMOD A7-35T](#digilent-cmod-a7-35t)
-      - [Example Audio Project](#example-audio-project)
-  - [SW](#sw)
+- [selected SW](#selected-sw)
+    - [Wekinator](#wekinator)
+    - [Planet CCRMA](#planet-ccrma)
     - [FAUST](#faust)
 
 ---------------
@@ -234,19 +235,29 @@ https://www.heise.de/news/ESP32-LyraT-V4-3-Soundmodul-mit-ESP32-4906420.html
 
 ------------
 
-## Others
+## FPGA
 
 ### Digilent [CMOD A7-35T](https://store.digilentinc.com/cmod-a7-breadboardable-artix-7-fpga-module/)
 FPGA (Field-programmable gate array) dev board with USB, SRAM
 
 >"not for beginners!"
 
-#### Example Audio Project
+Example Audio Project
 https://www.futur3soundz.com/xfm2
 
 ------------
 
-## SW
+# selected SW
+
+### Wekinator
+http://www.wekinator.org/
+<br> Flexible, modern Machine Learning toolkit for Musicians/digital artists by Rebecca Fiebrink. Fully OSC controllable.
+
+------------
+### Planet CCRMA
+Linux audio package, slightly outdeted.
+http://ccrma.stanford.edu/planetccrma/software/planetccrma.html
+
 ### FAUST
 
 A Functional Programming Language for Real Time Signal Processing 
@@ -282,9 +293,15 @@ Features:
 Links:
 
 - web editor with plenty of samples: <br> https://faustide.grame.fr/
-- tutorial: <br>  https://ccrma.stanford.edu/~rmichon/faustTutorials
 - web playground! https://faustplayground.grame.fr/
+- tutorial: <br>  https://ccrma.stanford.edu/~rmichon/faustTutorials
 - youtube: <br> https://www.youtube.com/watch?v=2lEt7dsziO0
 - Workshop: Making Low Latency Guitar Pedals and Synthesizer Modules<br>  https://ccrma.stanford.edu/workshops/faust-embedded-19
+- ••••••
+- Faust for µC's overview: https://ccrma.stanford.edu/~rmichon/faustMicro/
+- Faust for Teensy: https://faustdoc.grame.fr/tutorials/teensy/ <br>
+http://smc2019.uma.es/articles/S1/S1_03_SMC2019_paper.pdf
+- Faust for ESP32: https://faustdoc.grame.fr/tutorials/esp32/ <br>
+https://hal.archives-ouvertes.fr/hal-02988312/file/smc20_faust_esp32.pdf
 
-- ToDo: ESP and Teensy tutorials!
+--------

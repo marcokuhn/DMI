@@ -45,6 +45,8 @@ float maxima[numReads] = {}; // max vals
 int dt = 1000 / framesPerSec;
 int readInt;
 float readFloat;
+const float initialMin = 0.2;
+const float initialMax = 0.;
 
 //ResponsiveAnalogRead analog(ANALOG_PIN, true);
 ResponsiveAnalogRead *touchSensors[numReads];

@@ -64,7 +64,7 @@ Over the course of several iterations, concepts and ideas develop into refined f
 - [Jeff Carey](http://jeffcarey.foundation-one.org/)
 - [Atau Tanaka](https://www.gold.ac.uk/computing/people/tanaka-atau/)
 - [Imogen Heap](http://imogenheap.com/myceliatour.php)
-- Rebecca Fiebrink 
+- [DMX Krew](https://blog.bela.io/2018/03/27/opal-rhythm-computor-dmx-krew)
 
 ## Stores
 - Adafruit > very many tutorials

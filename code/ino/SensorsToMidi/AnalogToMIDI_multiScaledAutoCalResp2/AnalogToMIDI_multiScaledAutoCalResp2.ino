@@ -45,7 +45,7 @@ float maxima[numReads] = {}; // max vals
 int dt = 1000 / framesPerSec;
 int readInt;
 float readFloat;
-const float initialMin = 0.02;
+const float initialMin = 0.5;
 const float initialMax = 0.;
 boolean doSendMidi = false;
 
@@ -84,7 +84,7 @@ void loop() {
       //       readInt = analogRead(analogPins[i]);  // keep it full res, range 0 to 1.
       touchSensors[i]->update();
       readInt = touchSensors[i]->getValue();
-      readInt = 1024 - readInt; // invert reading, since, with pullup, no touch corresponds to max reading; and we want it to be close to 0.
+   //   readInt = 1024 - readInt; // invert reading, since, with pullup, no touch corresponds to max reading; and we want it to be close to 0.
 
       readFloat = readInt / 1024.;
       // autocal:
