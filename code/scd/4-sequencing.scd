@@ -18,18 +18,32 @@ Synth(\SOShats);
 (instrument: \SOStom, freq: 120, sustain: 0.4).play;
 
 
-// a Tdef as a (stochastic) sequencer:
+//================================================================
 
+// A Task structures things in time:
+Tdef(\basic, { |envir|
+	inf.do{
+		"yolo!".scramble.postln;
+		1.wait;
+	};
+}).play;
+
+// here we see what's going on:
+TdefAllGui.new;
+
+
+
+// Tdefs as (stochastic) sequencers:
 (
 // 1. soloist
 Tdef(\seq_1, { |envir|
 	inf.do{
 		if(0.4.coin){
-			Synth(\SOSkick, [freq: 90, beater_noise_level: 0.7, mid_index: 100]);
+			Synth(\SOSkick, [freq: 90, beater_noise_level: 0.7, mod_index: 1, mod_freq: 120]);
 		}{
 			Synth([\SOSsnare, \SOShats].choose, [sustain: 0.5, amp: 0.1]);
 		};
-		(1/1).wait;
+		(1/2).wait;
 	};
 }).play;
 );
@@ -67,7 +81,6 @@ Tdef(\seq_2).addSpec(\seed, [0, 200, 0, 1]);
 
 TempoClock.default.tempo = 110 / 60;
 
-TdefAllGui.new;
 
 /*
 ToDo: seq other vals, e.g. freq, sustain, ...
