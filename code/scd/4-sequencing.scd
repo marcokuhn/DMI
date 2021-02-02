@@ -17,6 +17,8 @@ Synth(\SOShats);
 (instrument: \SOSkick, freq: 90).play;
 (instrument: \SOStom, freq: 120, sustain: 0.4).play;
 
+// ToDo: Anatomy of SynthDef; Make our own mini SynthDef.
+// don't forget FreeSelf and Out Ugen.
 
 //================================================================
 

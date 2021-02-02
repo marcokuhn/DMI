@@ -69,7 +69,7 @@ Ndef(\xfm1, { arg freqA = 32, freqB = 9, modAtoB=540, modBtoA=240;
 );
 
 Ndef('xfm1').set('freqA', 9.0, 'freqB', 40.0, 'modAtoB', 205,  'modBtoA', 243.64);
-Ndef('xfm1').set('freqA', 18.407130349563, 'freqB', 40.0, 'modAtoB', 90.0, 'modBtoA', 172.0);
+Ndef('xfm1').set('freqA', 18, 'freqB', 40.0, 'modAtoB', 90.0, 'modBtoA', 172.0);
 
 // ToDo: map to MIDI, ...
 
