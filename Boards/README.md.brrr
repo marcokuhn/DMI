@@ -85,7 +85,10 @@ https://www.youtube.com/watch?v=-2B4Dmy4J1Y
   - https://github.com/otem/teensypolysynth
 - Tsynth - ElectroTechnique
   - http://electrotechnique.cc
-
+- An OP-1 inspired portable groovebox
+  - https://github.com/prajwal1121/Portable-Synth
+- Modular FM polyphonic synthesizer
+  - https://github.com/ghostintranslation/synth
 
 
 ------------
@@ -93,7 +96,8 @@ https://www.youtube.com/watch?v=-2B4Dmy4J1Y
 ## DAISY Board
 <img src="https://images.squarespace-cdn.com/content/v1/58d03fdc1b10e3bf442567b8/1591827747342-HCXMM2NNR26SP5F4U2CJ/ke17ZwdGBToddI8pDm48kN5PbQBGNYbW-5Hm1pf8hRF7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0kLp48N9LluBiCpBrPZntaz462IffsVrAff3VJkwKncM1HZuDnV98dfxM9yHlqFkUQ/DaisyPinoutRev4%404x.png?format=500w" width="300">
 
-https://www.electro-smith.com/daisy/daisy
+https://www.electro-smith.com/daisy/daisy <br>
+Specialized Audio µC Hardware with inputs for Sensors. 
 
 ------------
 
@@ -297,6 +301,7 @@ Links:
 - tutorial: <br>  https://ccrma.stanford.edu/~rmichon/faustTutorials
 - youtube: <br> https://www.youtube.com/watch?v=2lEt7dsziO0
 - Workshop: Making Low Latency Guitar Pedals and Synthesizer Modules<br>  https://ccrma.stanford.edu/workshops/faust-embedded-19
+<<<<<<< HEAD
 - ••••••
 - Faust for µC's overview: https://ccrma.stanford.edu/~rmichon/faustMicro/
 - Faust for Teensy: https://faustdoc.grame.fr/tutorials/teensy/ <br>
@@ -304,4 +309,4 @@ http://smc2019.uma.es/articles/S1/S1_03_SMC2019_paper.pdf
 - Faust for ESP32: https://faustdoc.grame.fr/tutorials/esp32/ <br>
 https://hal.archives-ouvertes.fr/hal-02988312/file/smc20_faust_esp32.pdf
 
---------
+-----------
