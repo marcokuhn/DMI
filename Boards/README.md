@@ -84,7 +84,9 @@ https://www.youtube.com/watch?v=-2B4Dmy4J1Y
   - https://github.com/otem/teensypolysynth
 - Tsynth - ElectroTechnique
   - http://electrotechnique.cc
-
+- An OP-1 inspired portable groovebox
+  - https://github.com/prajwal1121/Portable-Synth
+ 
 
 
 ------------
