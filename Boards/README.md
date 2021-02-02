@@ -86,7 +86,8 @@ https://www.youtube.com/watch?v=-2B4Dmy4J1Y
   - http://electrotechnique.cc
 - An OP-1 inspired portable groovebox
   - https://github.com/prajwal1121/Portable-Synth
- 
+- Modular FM polyphonic synthesizer
+  - https://github.com/ghostintranslation/synth
 
 
 ------------
