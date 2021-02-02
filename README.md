@@ -35,6 +35,8 @@ Over the course of several iterations, concepts and ideas develop into refined f
 - Bowers, Archer, Infra-Instruments http://www.philarcher.net/main/writing_files/HyperMetaCyberInfra_BowersArcher.pdf
 - John Richards, [Beyond DIY in Electronic Music](https://www.cambridge.org/core/journals/organised-sound/article/abs/beyond-diy-in-electronic-music/9B0273F67194DDA07295A761C9384CB0#) 
 - [one knob to rule them all](https://oneknobtorule.wordpress.com/)
+- Sonami 2014: [And now we leave gloves and other wearables to (small) dictators](https://sonami.net/?page_id=674)
+- Sonami 2020: https://sonami.net/wp-content/uploads/2020/08/FiebrinkSonami_NIME2020.pdf
 
 ## Conferences
 - NIME – The International Conference on New Interfaces for Musical Expression - https://www.nime.org
@@ -61,6 +63,7 @@ Over the course of several iterations, concepts and ideas develop into refined f
 - [Jeff Carey](http://jeffcarey.foundation-one.org/)
 - [Atau Tanaka](https://www.gold.ac.uk/computing/people/tanaka-atau/)
 - [Imogen Heap](http://imogenheap.com/myceliatour.php)
+- Rebecca Fiebrink 
 
 ## Stores
 - Adafruit > very many tutorials
