@@ -58,7 +58,7 @@ https://www.midi.org/specifications-old/item/table-1-summary-of-midimessage
 
 ### MIDI INTERFACES
 MIDI 5-pin DIN sockets</br>
-- MIDI-In is used by a device to receive messages
+- MIDI-In is used by a device to receive messages. Usually decoupled by an Optocoupler for safety. 
 - MIDI Out transmits messages
 <img src="https://www.pjrc.com/teensy/td_libs_MIDI_sch_t3.png" width="400">
 - MIDI-Thru transmits unprocessed signals received at the MIDI-In
@@ -81,8 +81,8 @@ MIDI 5-pin DIN sockets</br>
 
 - a network communication protocol
 - used to transmit control data via a network (Internet, local network, WLAN)
-- you can also exchange data between programs locally on one computer (localhost)
-- is often used as a replacement for MIDI
+- can also exchange data between programs locally on one computer (localhost)
+- often used as a modern replacement for MIDI
   
 Project page : http://opensoundcontrol.org/introduction-osc
 
@@ -118,10 +118,13 @@ Data will be transmitted through packages. A package consists of data and a byte
 
 - consists of a path (address / represents the value to be transmitted) and the parameters to be transmitted
   
-e.g. </br>
-    **/track/1/volume 0.75 </br>
-    /collision/1 1 </br>
-    /tab1/slider1/value 0.33**</br>
+e.g. 
+````````````
+    **/track/1/volume 0.75
+    /collision/1 1
+    /tab1/slider1/value 0.33**
+````````````
+---------------------------
 
 ### OSC vs. MIDI
 
