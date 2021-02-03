@@ -63,9 +63,10 @@ MIDI 5-pin DIN sockets</br>
 <img src="https://www.pjrc.com/teensy/td_libs_MIDI_sch_t3.png" width="400">
 - MIDI-Thru transmits unprocessed signals received at the MIDI-In
 </br></br>
-- MIDI USB
+- MIDI over USB 
+dedicated article: https://tttapa.github.io/Control-Surface-doc/Doxygen/d8/d4a/md_pages_MIDI-over-USB.html 
 - MIDI OVER LAN
-- Wireless MIDI
+- Wireless MIDI: rtpMIDI, AppleMIDI, MIDI over BLE (Bluetooth), ... 
 
 ### TOOLS
 - MIDI Monitor – http://www.snoize.com/MIDIMonitor/
@@ -107,12 +108,13 @@ OSC specification: http://opensoundcontrol.org/introduction-osc
 
 Data will be transmitted through packages. A package consists of data and a byte, which specifies the length of the transmitted message. The package will be transmitted through UDP or TCP.
 
-### Data types in OSC
+### Data types in OSC 
+
 - int32
 - float32
 - OSCString, sequence of ASCII characters
-- OSCTimetag (64 bit). The first 32 bits are the seconds since 1 January 1900, the second 32 bits represent the second fraction, this is the NTP format.
 - OSCBlob
+- OSCTimetag (64 bit). The first 32 bits are the seconds since 1 January 1900, the second 32 bits represent the second fraction, this is the NTP format.
 
 ### OSC messages
 
@@ -120,10 +122,14 @@ Data will be transmitted through packages. A package consists of data and a byte
   
 e.g. 
 ````````````
-    **/track/1/volume 0.75
+    /track/1/volume 0.75
     /collision/1 1
-    /tab1/slider1/value 0.33**
+    /tab1/slider1/value 0.33
 ````````````
+
+### implementations:
+- Aruino OSC library: https://github.com/CNMAT/OSC
+- OSC via USB: Node JS script that translates SLIP OSC to UDP OSC (bidirectional): https://github.com/tttapa/Projects/tree/master/Arduino/NodeJS/SLIP 
 ---------------------------
 
 ### OSC vs. MIDI
@@ -161,8 +167,8 @@ e.g.
 - TCP OSC Router https://github.com/bgola/tcposcrouter
 - Max/Msp - ([OSC-Route],[o.route])
   - https://cnmat.berkeley.edu/downloads
-    - ODOT (ODOT (OSC) objects)
-    - OSC-Route (CNMAT Externals) 
+  - ODOT (ODOT (OSC) objects)
+  - OSC-Route (CNMAT Externals) 
 
 
 ## USB HID
