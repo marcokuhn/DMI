@@ -63,7 +63,6 @@ MIDI 5-pin DIN sockets</br>
 - MIDI Out transmits messages
 <img src="https://www.pjrc.com/teensy/td_libs_MIDI_sch_t3.png" width="400">
 - MIDI-Thru transmits unprocessed signals received at the MIDI-In
-</br></br>
 - MIDI over USB. Dedicated article: https://tttapa.github.io/Control-Surface-doc/Doxygen/d8/d4a/md_pages_MIDI-over-USB.html 
 - MIDI OVER LAN
 - Wireless MIDI: rtpMIDI, AppleMIDI, MIDI over BLE (Bluetooth), ... 
