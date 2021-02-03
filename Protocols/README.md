@@ -37,7 +37,6 @@
 • MIDI - Musical Instrument Digital Interface is a specification how to transmit digital control information.
 • MIDI 1.0 was introduced in 1982 by Dave Smith and Ikutaro Kakehashi (Founder of Roland Corporation)
 
-
 ### DATA TRANSMISSION
 
 Data will be transfered serially with 31250 bits/sec.
@@ -51,9 +50,6 @@ e.g. NOTE ON Message </br>
 9n = StatusByte = NOTE-ON messge (n = MIDI channel 0 - 15)
 1. data byte = note (0 - 127 )
 2. data byte = velocity (0 - 127)
-
-
-
 
 To distinguish between a status byte and a data byte, a status byte always
 begins with 1 and a data byte with 0.</br></br>
@@ -90,7 +86,7 @@ MIDI 5-pin DIN sockets</br>
   
 Project page : http://opensoundcontrol.org/introduction-osc
 
-### Examples of use
+### Examples use cases
 
 #### Local communication
 - AV Performance -> Sound connected to Visuals: Ableton Live <-> Resolume
@@ -102,7 +98,7 @@ audiodesign.hdpk.de/?works=kontraktion
 - Dedicated Ableton Live Controller e.g. TouchAble
 
 #### Communication between computers
-- Sound environment (e.g. Max for Live) controls Visuals (VVVV) on another computer in the sam network or
+- Sound environment (e.g. Max for Live / SC) controls Visuals (VVVV) on another computer in the sam network or
 - via computer in different networks (Internet through a tunnel e.g. ngrok https://ngrok.com)
 
 ### OSC data transmission
@@ -135,7 +131,7 @@ e.g. </br>
 - OSC is sent over the network (Internet, Wlan)
 - no MIDI hardware necessary, network is usually available
 - you can define own data types
-- Integration and control of hardware is easier as MIDI SysEx messages
+- Integration and control of hardware is easier than MIDI SysEx messages
 
 #### Cons
 - No standardization of the parameters as with the MIDI protocol (e.g. Note-On,CC,...)
@@ -159,6 +155,7 @@ e.g. </br>
 ### Links
 - OSC - http://opensoundcontrol.org
 - Tunnel for sending data over different networks (internet) - https://ngrok.com
+- TCP OSC Router https://github.com/bgola/tcposcrouter
 - Max/Msp - ([OSC-Route],[o.route])
   - https://cnmat.berkeley.edu/downloads
     - ODOT (ODOT (OSC) objects)
@@ -177,7 +174,7 @@ Human Interface Device - The way the USB Port handles input devices from Mouse/K
 - Teensy supports USB Modes for both MIDI and HID, as well as Keyboard and Mouse Emulation. 
 
 #### Cons
-- difficult, intransparent protocol
+- difficult, rather intransparent protocol
 - only recommendable where sending double byte MIDI data is not convenient. 
 
 #### HID on Teensy
