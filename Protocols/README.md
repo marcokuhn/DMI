@@ -10,13 +10,15 @@
     - [TOOLS](#tools)
     - [LINKS](#links)
   - [OSC – Open Sound Control Protocol](#osc--open-sound-control-protocol)
-    - [Examples of use](#examples-of-use)
+    - [Examples use cases](#examples-use-cases)
       - [Local communication](#local-communication)
       - [Remote control](#remote-control)
       - [Communication between computers](#communication-between-computers)
     - [OSC data transmission](#osc-data-transmission)
     - [Data types in OSC](#data-types-in-osc)
     - [OSC messages](#osc-messages)
+    - [implementations:](#implementations)
+  - [- OSC via USB: Node JS script that translates SLIP OSC to UDP OSC (bidirectional): https://github.com/tttapa/Projects/tree/master/Arduino/NodeJS/SLIP](#--osc-via-usb-node-js-script-that-translates-slip-osc-to-udp-osc-bidirectional-httpsgithubcomtttapaprojectstreemasterarduinonodejsslip)
     - [OSC vs. MIDI](#osc-vs-midi)
       - [Pros](#pros)
       - [Cons](#cons)
@@ -168,6 +170,8 @@ e.g.
   - https://cnmat.berkeley.edu/downloads
   - ODOT (ODOT (OSC) objects)
   - OSC-Route (CNMAT Externals) 
+- OSC ARDUINO / TEENSY / ESP8266 Library
+  - https://github.com/CNMAT/OSC
 
 
 ## USB HID

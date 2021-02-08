@@ -185,6 +185,8 @@ Capable of audio playback and synthesis with appropriate (I2S) DACs.
 Smallest, most inexpensive chip from the ESP series; as cheap as <2€ per chip from Chinese sources! Think of large-scale use cases!-) 
 With only 1 ADC pin hardly suited for analog sensors, but fine for any peripherals commuicating via I2C / SPI bus. 
 
+<a href="https://tttapa.github.io/ESP8266/Chap01%20-%20ESP8266.html">A Beginner's Guide to the ESP8266</a>
+
 #### ESP8266 ESP-01
 <img src="https://ae01.alicdn.com/kf/HTB1mwr2NFXXXXc4XpXXq6xXFXXXn/ESP8266-ESP-01-ESP8266-WIFI-module-Serial-Wi-Fi-Wireless-Transceiver-Module-for-Arduino.jpg" width="200">
 
