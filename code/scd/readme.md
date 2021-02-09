@@ -35,3 +35,7 @@ https://swiki.hfbk-hamburg.de/MusicTechnology/899
 https://www.youtube.com/playlist?list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iEWYC  
 #### classic, online:
 https://composerprogrammer.com/teaching/supercollider/sctutorial/tutorial.html
+#### Nathan Ho's "stuff I wish I knew years earlier" 
+https://nathan.ho.name/posts/supercollider-tips/
+#### Fredrik Olofsson's Amazing Blog
+https://fredrikolofsson.com/categories/supercollider/
