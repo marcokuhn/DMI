@@ -1,4 +1,4 @@
-// from SC Examples folder; just added semicolons to properly autoload.
+// from SC Examples folder; just added formatting to properly autoload.
 
 
 // SOS Drums by Renick Bell, renick_at_gmail.com

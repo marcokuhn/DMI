@@ -19,7 +19,7 @@ Over the course of several iterations, concepts and ideas develop into refined f
 ## Books
 - Instruments for New Music: Sound, Technology, and Modernism. California: University of California – https://www.luminosoa.org/site/books/m/10.1525/luminos.7/
 - Musical Instruments in the 21st Century- https://www.3dmin.org/publications/official-publication/
-- Nic Collins: Handmade Electronic Music. The Art Of HArdware Hacking.
+- Nic Collins: Handmade Electronic Music. The Art Of Hardware Hacking.
 - [ PUSH TURN MOVE](https://bjooks.com/products/push-turn-move-the-book)
 - Exotic/experimental acoustic Instrument Design: Hopkin, B. Musical Instrument Design. See Sharp Press,Tucson, Arizona, 1996.
 - Classic: The Art of Noise - http://www.artype.de/Sammlung/pdf/russolo_noise.pdf
