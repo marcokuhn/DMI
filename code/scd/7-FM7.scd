@@ -1,37 +1,39 @@
 // more on FM
 
+s.boot;
 
+// FM Exploration.
 
 // Ramdom Seed parametrized FM perc. synths. HH ca. 2014 - 21
 // 2 operators, 1 carrier.
 (
-SynthDef( \fmSanSimple, { arg seed = 239, amp=0.2, sustain=1;
-	var sig, op1, op2;
+SynthDef( \fmSanSimple, { arg seed = 123, amp=0.2, sustain=1;
+	var carrier, op1, op2;
 
-	RandID.ir(10);  // choose a specific RandID (read help:)
+	RandID.ir(10);         // choose a specific RandID (read help:)
 	RandSeed.ir(1, seed);  // the Rand Seed may be set from outside at creation time.
 
 	// 2 operators, with efficient FSinOScand random freqs, phases, amps
-	op1 = FSinOsc.kr( ExpRand(10, 800), Rand(-pi, pi), Rand(-100, 400));
- 	op2 = FSinOsc.ar( ExpRand(1, 8000), {Rand(-pi, pi)}!2 );
+	op1 = FSinOsc.kr(ExpRand(10, 800), Rand(-pi, pi),     Rand(-100, 400));
+	op2 = FSinOsc.ar(ExpRand(1, 8000), {Rand(-pi, pi)}!2, ExpRand(0.2, 100));
 
-	sig = SinOsc.ar(
-			ExpRand(0.2, 800) // carrier freq
-			+ op1 // and adding op2
-			* op2.madd( ExpRand(0.2, 100)) // scaled by op1
+	carrier = SinOsc.ar(
+		ExpRand(0.2, 1000) // carrier freq
+		+ op1 // and adding op2
+		* op2 // scaled by op1
 		,
-		{Rand(-pi, pi)}!2,
+		{ Rand(-pi, pi) }!2,
 		amp
 	);
 
-//	sig = sig * XLine.kr(1,0.001, tscaler, doneAction: 2);
-	sig = EnvGen.ar(Env.perc(ExpRand(0.001, 0.2), sustain), doneAction: 2) * sig;
-	Out.ar(0, sig);
+	carrier = EnvGen.ar(Env.perc(ExpRand(0.01, 0.2), sustain), doneAction: 2)
+	* carrier;
+	Out.ar(0, carrier);
 
 }).add;
 );
 
-(instrument: \fmSanSimple, seed: 100.rand.postcln, amp: 0.25).play;
+(instrument: \fmSanSimple, seed: 100.rand.postcln, amp: 0.125).play;
 // pick favourite seeds
 (instrument: \fmSanSimple, seed: 31.postcln, amp: 0.25).play;
 (instrument: \fmSanSimple, seed: 55.postcln, amp: 0.25).play;
@@ -42,7 +44,7 @@ SynthDef( \fmSanSimple, { arg seed = 239, amp=0.2, sustain=1;
 Pdef(\fmExplorer,
 	Pbind(
 		\instrument, \fmSanSimple,
-		\seed, Pbrown(0, 100, 1, inf).asInteger.trace,
+		\seed, Pbrown(0, 100, 5, inf).asInteger.trace,
 		\amp, 0.25,
 		\dur, 0.25
 	)
@@ -55,67 +57,215 @@ Pdef(\fmExplorer,
 		\instrument, \fmSanSimple,
 		\seed, Pseq((0 .. 100), 1).trace,
 		\amp, 0.25,
-		\dur, 0.125,
+		\dur, 0.5,
 		\legato, Pbrown(0.1, 1.5, 0.1)
 	)
 ).play;
 )
 
-
+// long notes.
 (instrument: \fmSanSimple, dur: 120, seed: 52, amp: 0.1).play;
 (instrument: \fmSanSimple, dur: 120, seed: 5, amp: 0.1).play;
-(instrument: \fmSanSimple, dur: 120, seed: 13, amp: 0.1).play;
+(instrument: \fmSanSimple, dur: 120, seed: 333, amp: 0.1).play;
+
+// ToDo:
+// implement more internal control, Envelopes !
+// external control
 
 
 
 
-// FM7 UGen from class library.
+// play these sounds from a Sequencer nicked from 4-sequencing.scd.
+Tdef(\seq_FM).set(\seed, 20211602); // today
+Tdef(\seq_FM).set(\length, 8);
+Tdef(\seq_FM).addSpec(\length, [1, 16, 0, 1]);
+Tdef(\seq_FM).addSpec(\seed, [0, 200, 0, 1]);
+Tdef(\seq_FM).gui;
+(
+Tdef(\seq_FM, { |envir|
+	var seq;
+	thisThread.randSeed = envir.seed.asInteger;
+	seq = [
+		0.9, 0.1, 0.2, 0.1,  0.6, 0.1, 0.1, 0.3,
+		0.7, 0.1, 0.1, 0.2,  0.5, 0.1, 0.8, 0.2
+	].scramble;
+
+	inf.do{
+		thisThread.randSeed = envir.seed.asInteger;
+
+		seq.wrapExtend(envir.length.asInteger).do{|val, i|
+
+			if(val.coin){
+				Synth(\fmSanSimple, [seed: 2000, sustain: exprand(0.1, 0.8)]);
+			}{
+				Synth(\fmSanSimple, [sustain: exprand(0.05, 0.4), seed: rrand(1, 5)]);
+			};
+			(1/4).wait;
+
+		};
+	}
+}).play;
+);
+
+// a bit simplified; 'classic' 4 track drum machine paradigm with each trackrepeating the same note.
+(
+Tdef(\seq_FM).set(\seed, 107);
+
+Tdef(\seq_FM, { |envir|
+	inf.do{
+		thisThread.randSeed = envir.seed.asInteger;
+
+		envir.length.asInteger.do{|i|
+
+			4.do{|track| // 4 "tracks"
+				if(0.5.coin){
+					Synth(\fmSanSimple, [seed: track, sustain: exprand(0.1, 0.8)]);
+				}
+			};
+			(1/4).wait;
+
+		};
+	}
+}).play;
+);
+
+
+// same with more controls: a slider for selecting each of the 4 tracks' sound.
+(
+Tdef(\seq_FM).set(\seed, 107);
+Tdef(\seq_FM).set(\decay, 0.2);
+Tdef(\seq_FM).set(\sound0, 0);
+Tdef(\seq_FM).set(\sound1, 1);
+Tdef(\seq_FM).set(\sound2, 2);
+Tdef(\seq_FM).set(\sound3, 3);
+Tdef(\seq_FM).addSpec(\sound0, [0, 200, 0, 1]);
+Tdef(\seq_FM).addSpec(\sound1, [0, 200, 0, 1]);
+Tdef(\seq_FM).addSpec(\sound2, [0, 200, 0, 1]);
+Tdef(\seq_FM).addSpec(\sound3, [0, 200, 0, 1]);
+)
+(
+Tdef(\seq_FM, { |envir|
+	inf.do{
+		thisThread.randSeed = envir.seed.asInteger;
+
+		envir.length.asInteger.do{|i|
+
+			4.do{|track| // 4 "tracks"
+				var soundSeed = envir.at([\sound0, \sound1, \sound2, \sound3][track]);
+				if(0.5.coin){
+					Synth(\fmSanSimple, [seed: soundSeed, sustain: exprand(0.5, 1.5) * envir.decay ]);
+				}
+			};
+			(1/4).wait;
+
+		};
+	}
+}).play;
+);
+
+// change Tempo
+TempoClock.default.tempo = 110 / 60;
+
+
+
+
+
+
+
+// The FM7 appreciation thread :
+"https://scsynth.org/t/the-fm7-appreciation-thread/3186".openOS;
+
+// install FM7 UGen from:
+"https://github.com/supercollider/sc3-plugins".openOS;
+// and copy it here:
+Platform.userExtensionDir.openOS;
+
+/*
+FM7 is an emulation of the famous Yamaha DX Series of FM Synths from the 80's.
+It had 32 topologies connecting 6 "operators" - digital sine wave generators with modulation input for freq and phase.
+see
+https://reverbmachine.com/blog/exploring-the-yamaha-dx7/
+and
+https://yamahadx9.com/assets/images/volcaalgo3-1800x1100.png
+
+Th SC emulation offers the 32 'algorithms' as
+FM7.arAlgo(algo: 0, ctlMatrix, feedback: 0.0)
+but also a much more flexible approach with
+FM7.ar
+with a full 6*6 modulaton matrix that allows to feed each output into each input.
+
+*/
+
+
+// explorations from help file
 
 (
+// algorithm 1 from DX7 with LFO'd freqs
 {
-    var ctls, mods, chans, freq;
-    freq = LFNoise0.kr(3).exprange(200, 310);
-    ctls = [
-        // freq, phase, amp
-        [freq, 0, 1],
-        [freq, 0, 1],
-        [LFNoise2.kr(0.5).exprange(3, 80), 0, 1],
-        [LFNoise2.kr(0.5).exprange(3, 800), 0, 1],
-        [LFNoise2.kr(0.5).exprange(3, 800), 0, 1],
-        [LFNoise2.kr(0.5).exprange(0.3, 10), 0, 1]
-    ];
-    mods = [
-        { LFNoise1.kr(0.5).max(0) } ! 6 * MouseX.kr(0, 3),
-        { LFNoise1.kr(0.5).max(0) } ! 6 * MouseY.kr(0, 3),
-        { LFNoise1.kr(0.5).max(0) } ! 6 * MouseY.kr(0, 3),
-        { LFNoise1.kr(0.5).max(0) } ! 6 * MouseX.kr(0, 3),
-        { LFNoise1.kr(0.5).max(0) } ! 6 * MouseY.kr(0, 3),
-        { LFNoise1.kr(0.5).max(0) } ! 6 * MouseY.kr(0, 3)
-    ];
-    chans = FM7.ar(ctls, mods).slice([0, 1]) * -12.dbamp;
-}.play;
+	var ctls = [
+		// freq, phase, amp
+		[LFNoise1.kr(0.5).range(300, 310), 0, 1],
+		[LFNoise1.kr(0.5).exprange(3, 310), 0, 1],
+		[LFNoise1.kr(0.5).exprange(3, 100), 0, 1],
+		[LFNoise1.kr(0.5).exprange(3, 100), 0, 1],
+		[LFNoise1.kr(0.5).exprange(3, 100), 0, 1],
+		[LFNoise1.kr(0.5).exprange(3, 100), 0, 1]
+	];
+	FM7.arAlgo(1, ctls, MouseX.kr(0, 2))
+}.play
+
 )
 
 
 (
+// full matrix;  LFO'd freqs, a few modulations changing by mouse/LFO
+{
+	var ctls, mods, chans;
+	ctls = [
+		// freq, phase, amp
+		[LFNoise1.kr(0.5).range(300, 310), 0, 1],
+		[LFNoise1.kr(0.5).exprange(3, 310), 0, 1],
+		[LFNoise1.kr(0.5).exprange(3, 100), 0, 1],
+		[LFNoise1.kr(0.5).exprange(3, 100), 0, 1],
+		[LFNoise1.kr(0.5).exprange(3, 100), 0, 1],
+		[LFNoise1.kr(0.5).exprange(3, 100), 0, 1]
+	];
+	mods = [
+		[Line.kr(0, 0.001, 2), Line.kr(0.1, 0, 4), 0, MouseY.kr(0, 6), 0, 0],
+		[MouseX.kr(0, 6), 0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0, 0],
+		[0, 0, 0, 0, 0, 0]
+	];
+	chans = [0, 1];
+	FM7.ar(ctls, mods).slice(chans) * -12.dbamp; // using "slice" to select specific channels
+}.play;
+)
+
+
+
+
+(
+// self-documenting stochastic code generation
 // Courtesy Fredrik Olofsson (2008)
 Routine.run{
-    var syn, time = 3; // Allow each patch to run for 3 sec
-    inf.do{|i|
-        ("// FM7 patch"+i).post;
-        syn= ("
-            (
-            var x= #"++({{{ |i| rrand(0.1, 0.5).round(0.5)}!4}!3}!6).asCompileString++";
-            var y= #"++({{{ |i| rrand(0.02, 1.6).round(0.5)}!4}!6}!6).asCompileString++";
-            {
-                var ctls= x.collect{|a| a.collect{|b| LFSaw.kr(*b)}};
-                var mods= y.collect{|a| a.collect{|b| LFPar.kr(*b)}};
-                var chans= #[0, 1];
-                FM7.ar(ctls, mods).slice(chans)*0.10;
-            }.play)").postln.interpret;
-        time.wait;
-        syn.free;
-    };
+	var syn, time = 3; // Allow each patch to run for a few sec
+	inf.do{|i|
+		("// FM7 patch"+i).post;
+		syn= ("
+(
+var x= #"++({{{ |i| rrand(0.1, 0.5).round(0.5)}!4}!3}!6).asCompileString++";
+var y= #"++({{{ |i| rrand(0.02, 1.6).round(0.5)}!4}!6}!6).asCompileString++";
+{
+var ctls= x.collect{|a| a.collect{|b| LFSaw.kr(*b)}};
+var mods= y.collect{|a| a.collect{|b| LFPar.kr(*b)}};
+var chans= #[0, 1];
+FM7.ar(ctls, mods).slice(chans) * 0.2;
+}.play)").postln.interpret;
+		time.wait;
+		syn.free;
+	};
 };
 )
 
@@ -124,9 +274,9 @@ Routine.run{
 
 
 
-
-
+// 32 algorithms explorer
 (
+// generate a SynthDef for each
 ~fm7SynthNames = 32.collect{|algoNum| "fm7algo%".format(algoNum).asSymbol};
 
 ~fm7SynthNames.do{|synthName, algo|
@@ -151,9 +301,8 @@ Routine.run{
 	}).add;
 };
 )
-
 (
-
+// play them
 Pbind(
 	\instrument, Pseq(~fm7SynthNames, inf).trace,
 	\dur, 1/8,
@@ -170,62 +319,56 @@ Pbind(
 
 
 
-// Influx example - todo
+// HH Influx example
 
-Quarks.install("Influx");
+
+///=== FM Ndef with Ndef/Influx
+Ndef(\fm7).clear;
+(
+// FM7 full matrix is 2 x 6 x 6 = 72 variables
+~modNames = {|i|{|j|("mod"++i++j).asSymbol } ! 6 } ! 6;
+~modNames.flat.collect{|n| Ndef(\fm7).addSpec(n, [0, 220, 12]); };
+Ndef(\fm7).addSpec(\ffreq, [75, 8000, \exp]);
+Ndef(\fm7).addSpec(\rq, [2, 0.1, \exp]);
+
+Ndef(\fm7, { arg ffreq=500, rq=1.5;
+	var snd;
+	var ctls =  { [ExpRand(1, 440), 0, 1] } ! 6; // freqs randomized
+	var mods = {|i|{|j| // mod table as control inputs
+		var name = ("mod"++i++j).asSymbol;
+		name.kr( 1.0.linrand )
+	} ! 6 } ! 6;
+
+	var chans = [0, 1];
+	snd = FM7.ar(ctls, mods).slice(chans);
+	// snd = Splay.ar(FM7.ar(ctls, mods));
+	RLPF.ar(snd, ffreq, rq, 0.1) + snd.madd(0.01); // a bit of filtering doen't hurt
+}).play;
+);
+
+Ndef(\fm7).gui; // ui!
+
+// new freqs, crossFade with fadeTime:
+Ndef(\fm7).fadeTime_(4);
+Ndef(\fm7).send;
+
+// new batch of mods:
+Ndef(\fm7).set( * ~modNames.flat.collect{|k| [k, [0, 10.0.linrand.linrand].choose ] }.flat  );
+
+// crossfade
+Ndef(\fm7).xset( * ~modNames.flat.collect{|k| [k, [0, 10.0.linrand.linrand].choose ] }.flat  );
+
+
+// ==
+
+// now, play it thru an Influx
+Quarks.install("Influx"); // needs Quark installed
 
 (
-// make an influx - fan-out 2 params to 8
-a = Influx([\x, \y], [\a, \b, \c,\d, \e, \f, \g, \h, \i, \j], (x: 0.5, y: 0.1));
-
-// or give the number of ins and outs:
-// a = Influx(2, 8);
-// or use a named Influx, an Idef:
-a = Idef(\a, 2, 10);
-
-// make plot/edit views for weights:
-d = InfluxIOWGui(a); d.skipjack.dt = 0.05;
-
-///// interactive gui example
-// recommended for direct use:
+// make an influx - fan-out 2 params to 38
+a = Influx([\x, \y, \z, \w], [\aa, \bb] ++ ~modNames.flat, (x: 0.5, y: 0.1));
+///// interactive gui  // recommended for direct use:
 InfluxKtlGui(a);
-
+// attach Influx to the Ndef
+a.attachMapped(Ndef(\fm7));
 );
-// try playing a boring sound with too many parameters
-// note that .addSpec requires JITLibExtensions quark
-(
-Ndef(\a).addSpec(\intv, [-24, 24]);
-Ndef(\a).addSpec(\timescale, [0.01, 10, \exp]);
-Ndef(\a).addSpec(\curve, [-10, 10]);
-Ndef(\a).addSpec(\ffreq, \freq);
-Ndef(\a).addSpec(\loopnode, [0, 12]);
-
-Ndef(\a).addSpec(\dens, [10, 1000]);
-Ndef(\a).addSpec(\resfreq, \freq);
-Ndef(\a).addSpec(\ringtime, [0.01, 1, \exp]);
-
-Ndef(\a, { |freq=250, intv=19, timescale=1, curve=0, loopnode=0, dens = 10, resfreq = 500, ringtime = 0.01|
-    var n = 15;
-    var env = EnvGen.kr(
-        Env({ 1.0.rand2 }!(n+1), {1.0.rand}!n, curve, releaseNode: n-1, loopNode: loopnode.min(n-3)),
-        timeScale: timescale);
-    var pitch = (env * [1, 0.33, -1] * intv).midiratio * freq;
-    var form = Formant.ar(pitch, pitch.rotate(1) * 1.6, pitch.rotate(2) * 2.6);
-
-    var dusty = Ringz.ar(Dust.ar(dens!3), resfreq * LFNoise0.kr([3, 5, 7], 0.5, 1), ringtime) * ((dens ** -0.5) * (ringtime ** -0.3)) ;
-    Splay.ar(form * dusty);
-
-}).play(vol: 0.25);
-Ndef(\a).gui.moveTo(0, 50).skipjack.dt_(0.05);
-);
-Ndef(\a).play;
-
-// connect the influx action to the Ndef
-a.attachMapped(Ndef(\a));
-);
-
-a.attachMapped(Ndef(\xfm));
-Ndef(\xfm).play;
-
-
-
