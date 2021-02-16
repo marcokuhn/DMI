@@ -1,22 +1,4 @@
-
-
-// simple cross-FM, inspired by Joker Nies
-(
-Ndef(\xfm, { arg freqA = 32, freqB = 9, modAtoB=540, modBtoA=240;
-	var fbIn = LocalIn.ar(2);
-	var sigs = SinOsc.ar([freqA, freqB] + (fbIn.reverse * [modBtoA, modAtoB]));
-	LocalOut.ar(sigs);
-	sigs * 0.5;
-}).play;
-
-Spec.add(\freqA, [1, 10000, \exp]);
-Spec.add(\freqB, [1, 10000, \exp]);
-Spec.add(\modBtoA, [0, 1000, 5]);
-Spec.add(\modAtoB, [0, 1000, 5]);
-
-Ndef(\xfm).gui;
-);
-
+// more on FM
 
 
 
@@ -80,9 +62,9 @@ Pdef(\fmExplorer,
 )
 
 
-(instrument: \fmSanSimple, dur: 200, seed: 52, amp: 0.1).play;
-(instrument: \fmSanSimple, dur: 200, seed: 5, amp: 0.1).play;
-(instrument: \fmSanSimple, dur: 200, seed: 13, amp: 0.1).play;
+(instrument: \fmSanSimple, dur: 120, seed: 52, amp: 0.1).play;
+(instrument: \fmSanSimple, dur: 120, seed: 5, amp: 0.1).play;
+(instrument: \fmSanSimple, dur: 120, seed: 13, amp: 0.1).play;
 
 
 
@@ -118,7 +100,7 @@ Pdef(\fmExplorer,
 (
 // Courtesy Fredrik Olofsson (2008)
 Routine.run{
-    var syn, time = 3; // Allow each patch to run for 16sec / 8bars
+    var syn, time = 3; // Allow each patch to run for 3 sec
     inf.do{|i|
         ("// FM7 patch"+i).post;
         syn= ("
@@ -188,8 +170,9 @@ Pbind(
 
 
 
-// HH / AdC
+// Influx example - todo
 
+Quarks.install("Influx");
 
 (
 // make an influx - fan-out 2 params to 8
