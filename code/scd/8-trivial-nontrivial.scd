@@ -1,7 +1,7 @@
 // trivial machine vs. nontrivial machines
 // a' la Heinz v. Foerster
 
-// trivial machine
+// trivial machine - only FOUR possible states
 
 // black box: a simple function that alters input according to a simple rule
 f = {|in| var out = in + 1 % 4; out };
@@ -59,17 +59,16 @@ Tdef(\nontrivSon, {
 }).play;
 
 // alternative algorithms
-g= {|in, prevIn| var out = 3 * in +  prevIn * 3  % 4; out };     // doubling
+g= {|in, prevIn| var out = 3 * in + prevIn * 3  % 4; out };     // doubling
 g= {|in, prevIn| var out = (3 * in + ( prevIn)) * 3  % 7; out }; // greater range
-
 
 
 
 //historically aware / aging: f depends on overall incrementing counter
 
-h = {|in, cnt| var out = in + ( cnt%3) % 4; out };
+h = {|in, cnt| var out = in + ( cnt div: in)  % 4; out };
 
-Tdef(\nontrivSonRecursive, {
+Tdef(\nontrivSonRecursive3, {
 	var out=0, cnt=0;
 	loop{
 		out = h.(out, cnt);
@@ -81,5 +80,6 @@ Tdef(\nontrivSonRecursive, {
 }).play;
 
 // alternative algorithms
-h = {|in, cnt| var out = in + ( cnt%11) * 3  % 4; out };
-h = {|in, cnt| var out = in + 1 * ( cnt >> in)   % 4; out };
+h = {|in, cnt| var out = in + ( cnt%3) % 4; out };
+h = {|in, cnt| var out = in + ( cnt % (in+2)) % 4; out };
+h = {|in, cnt| var out = in + 1 * ( cnt >> in) % 4; out };
