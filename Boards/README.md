@@ -16,7 +16,6 @@ With special focus on usage for **D**igital **M**usic **I**nstruments
   - [Raspberry Pi](#raspberry-pi)
   - [BELA](#bela)
   - [ELK OS](#elk-os)
-  - [STM 32](#stm-32)
   - [ESP Series](#esp-series)
       - [Example Audio Projects](#example-audio-projects-1)
     - [ESP8266](#esp8266)
@@ -26,8 +25,11 @@ With special focus on usage for **D**igital **M**usic **I**nstruments
       - [ESP32 DevKit](#esp32-devkit)
       - [LILYGO TTGO T-Audio Board](#lilygo-ttgo-t-audio-board)
       - [ESP32-LyraT-V4](#esp32-lyrat-v4)
+  - [STM 32](#stm-32)
   - [FPGA](#fpga)
     - [Digilent CMOD A7-35T](#digilent-cmod-a7-35t)
+  - [FPAA](#fpaa)
+    - [ZRNA](#zrna)
 - [selected SW](#selected-sw)
     - [Wekinator](#wekinator)
     - [Planet CCRMA](#planet-ccrma)
@@ -116,6 +118,9 @@ http://www.axoloti.com/
 - Stereo I/O, MIDI I/O, SD card slot, USB MIDI Host onboard.
 - rather low price for the integrated HW, free SW. 
 
+### HW upgrade for Axoloti: ZRNA akso
+https://zrna.org/akso 
+
 ------------
 
 ## Raspberry Pi
@@ -168,12 +173,8 @@ https://elk.audio
 
 Ultra-low-latency (1ms round-trip) HW/SW bundle based on Paspberry Pi + custom board + Raspi Linux Image + tons of pre-compiled plugins/synths; VST Plugin Support
 
-------------
 
-## STM 32
-TBC
-  - [STM32 32-bit Arm Cortex MCUs](https://www.st.com/en/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus.html)
-  - [STM32 Audio DSP](https://www.youtube.com/c/YetAnotherElectronicsChannel/playlists)
+------------
 
 ## ESP Series
 Popular, "new" Series of inexpensive Single-Board-computers targeted at IoT, Arduino compatible but with modern 32bit processor similar to Teensy, and WiFi & Bluetooth onboard (!), designed & made by chinese company ESPRESSIF. 
@@ -249,15 +250,32 @@ https://www.heise.de/news/ESP32-LyraT-V4-3-Soundmodul-mit-ESP32-4906420.html
 
 ------------
 
+## STM 32
+STM Chips are at the core of most modern-day digital sound processors: a powerful, inexpensive chip family well suited for audio: they can implement latency-free DSP logic, but lack the musician-friendly programming infrastructures of the above platforms: "not for beginners". 
+
+TBC
+
+  - [STM32 32-bit Arm Cortex MCUs](https://www.st.com/en/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus.html)
+  - [STM32 Audio DSP](https://www.youtube.com/c/YetAnotherElectronicsChannel/playlists)
+
+------------
+
 ## FPGA
+Field-programmable gate array
 
 ### Digilent [CMOD A7-35T](https://store.digilentinc.com/cmod-a7-breadboardable-artix-7-fpga-module/)
-FPGA (Field-programmable gate array) dev board with USB, SRAM
+FPGA  dev board with USB, SRAM
 
 >"not for beginners!"
 
 Example Audio Project
 https://www.futur3soundz.com/xfm2
+
+## FPAA
+Field-programmable analog array
+
+### [ZRNA](https://zrna.org/)
+devel board combining an FPAA with an ARM µP and USB; can be programmed with a simple Python API.
 
 ------------
 
