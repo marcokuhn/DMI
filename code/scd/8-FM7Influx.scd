@@ -9,7 +9,10 @@ Ndef(\fm7).clear;
 (
 // FM7 full matrix is 2 x 6 x 6 = 72 variables
 ~modNames = {|i|{|j|("mod"++i++j).asSymbol } ! 6 } ! 6;
+~freqNames = {|i| ("freq"++i).asSymbol } ! 6;
+
 ~modNames.flat.collect{|n| Ndef(\fm7).addSpec(n, [0, 220, 12]); };
+~freqNames.collect{|n| Ndef(\fm7).addSpec(n, [1, 50, 12]); };
 Ndef(\fm7).addSpec(\ffreq, [75, 8000, \exp]);
 Ndef(\fm7).addSpec(\rq, [2, 0.1, \exp]);
 Ndef(\fm7).addSpec(\chan1, [0, 5, \lin]);
@@ -17,11 +20,12 @@ Ndef(\fm7).addSpec(\chan2, [0, 5, \lin]);
 
 Ndef(\fm7, { arg ffreq=500, rq=1.5;
 	var snd;
-	var ctls =  { [ExpRand(1, 440), 0, 1] } ! 6; // freqs randomized
 	var mods = {|i|{|j| // mod table as control inputs
 		var name = ("mod"++i++j).asSymbol;
 		name.kr( 1.0.linrand )
 	} ! 6 } ! 6;
+	// var ctls =  { [ExpRand(1, 440), 0, 1] } ! 6; // freqs randomized
+	var ctls =  ~freqNames.collect{|name| [name.kr(100.rand), 0, 1] };
 
 	var chans = [\chan1.kr, \chan2.kr];
 	snd = FM7.ar(ctls, mods); // actual synth
@@ -64,5 +68,17 @@ for a different set of parameter distributions, press "RANDOM" on the Influx gui
 for deeper understanding:
 "https://www.3dmin.org/wp-content/uploads/2014/03/Campo_2014.pdf".openOS
 */
-// for changing the constant freqs, keep pressing
-Ndef(\fm7).send;
+
+// re-tune param ranges (aka Specs) for differnt timbral ranges
+
+// orig
+~modNames.flat.collect{|n| Ndef(\fm7).addSpec(n, [0, 220, 12]); };
+~freqNames.collect{|n| Ndef(\fm7).addSpec(n, [1, 50, 12]); };
+
+// lo freq, hi mod
+~modNames.flat.collect{|n| Ndef(\fm7).addSpec(n, [1, 100, 12]); };
+~freqNames.collect{|n| Ndef(\fm7).addSpec(n, [10, 150, 12]); };
+
+// hi freq, lo mod
+~modNames.flat.collect{|n| Ndef(\fm7).addSpec(n, [0, 10, 12]); };
+~freqNames.collect{|n| Ndef(\fm7).addSpec(n, [50, 1000, 12]); };
