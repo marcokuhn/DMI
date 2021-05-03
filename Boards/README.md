@@ -16,6 +16,7 @@ With special focus on usage for **D**igital **M**usic **I**nstruments
   - [Raspberry Pi](#raspberry-pi)
   - [BELA](#bela)
   - [ELK OS](#elk-os)
+  - [STM 32](#stm-32)
   - [ESP Series](#esp-series)
       - [Example Audio Projects](#example-audio-projects-1)
     - [ESP8266](#esp8266)
@@ -153,6 +154,8 @@ Well suited for fast reacting devices programmed in high-level prog. languages l
 - rather expensive
 - [TRILL](https://bela.io/products/trill/) is a set of great hi-res capacitive sensors (not only) for Bela.
 - [Project archive](https://blog.bela.io/archive/)
+- [C++ Real-Time Audio Programming with Bela](https://www.youtube.com/watch?v=aVLRUyPBBJk&list=PLCrgFeG6pwQmdbB6l3ehC8oBBZbatVoz3)
+  
 
 ------------
 
@@ -166,6 +169,11 @@ https://elk.audio
 Ultra-low-latency (1ms round-trip) HW/SW bundle based on Paspberry Pi + custom board + Raspi Linux Image + tons of pre-compiled plugins/synths; VST Plugin Support
 
 ------------
+
+## STM 32
+TBC
+  - [STM32 32-bit Arm Cortex MCUs](https://www.st.com/en/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus.html)
+  - [STM32 Audio DSP](https://www.youtube.com/c/YetAnotherElectronicsChannel/playlists)
 
 ## ESP Series
 Popular, "new" Series of inexpensive Single-Board-computers targeted at IoT, Arduino compatible but with modern 32bit processor similar to Teensy, and WiFi & Bluetooth onboard (!), designed & made by chinese company ESPRESSIF. 

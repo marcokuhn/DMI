@@ -72,6 +72,8 @@ MIDI 5-pin DIN sockets</br>
 ### TOOLS
 - MIDI Monitor – http://www.snoize.com/MIDIMonitor/
 - SysEx Librarian – http://www.snoize.com/SysExLibrarian/
+- Hairless MIDI<->Serial Bridge – https://projectgus.github.io/hairless-midiserial/
+
 ### LINKS
 - https://learn.sparkfun.com/tutorials/midi-tutorial/all
 - https://www.midi.org
