@@ -36,8 +36,8 @@
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Midi.png" width="250">
 
 ### HISTORY
-• MIDI - Musical Instrument Digital Interface is a specification how to transmit digital control information.
-• MIDI 1.0 was introduced in 1982 by Dave Smith and Ikutaro Kakehashi (Founder of Roland Corporation)
+- MIDI - Musical Instrument Digital Interface is a specification how to transmit digital control information
+- MIDI 1.0 was introduced in 1982 by Dave Smith and Ikutaro Kakehashi (Founder of Roland Corporation)
 
 ### DATA TRANSMISSION
 
