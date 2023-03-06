@@ -166,7 +166,6 @@ e.g.
 
 ### Links
 - OSC - http://opensoundcontrol.org
-- Tunnel for sending data over different networks (internet) - https://ngrok.com
 - TCP OSC Router https://github.com/bgola/tcposcrouter
 - Max/Msp - ([OSC-Route],[o.route])
   - https://cnmat.berkeley.edu/downloads
