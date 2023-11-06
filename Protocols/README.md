@@ -71,6 +71,7 @@ MIDI 5-pin DIN sockets</br>
 
 ### TOOLS
 - MIDI Monitor – http://www.snoize.com/MIDIMonitor/
+- ShowMIDI : Multi-platform GUI application to effortlessly visualize MIDI activity – https://github.com/gbevin/ShowMIDI
 - SysEx Librarian – http://www.snoize.com/SysExLibrarian/
 - Hairless MIDI<->Serial Bridge – https://projectgus.github.io/hairless-midiserial/
 
