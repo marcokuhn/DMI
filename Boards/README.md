@@ -97,7 +97,7 @@ https://www.youtube.com/watch?v=-2B4Dmy4J1Y
 ------------
 
 ## DAISY Board
-<img src="https://images.squarespace-cdn.com/content/v1/58d03fdc1b10e3bf442567b8/1591827747342-HCXMM2NNR26SP5F4U2CJ/ke17ZwdGBToddI8pDm48kN5PbQBGNYbW-5Hm1pf8hRF7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0kLp48N9LluBiCpBrPZntaz462IffsVrAff3VJkwKncM1HZuDnV98dfxM9yHlqFkUQ/DaisyPinoutRev4%404x.png?format=500w" width="300">
+<img src="https://electro-smith.com/cdn/shop/files/ES_Daisy_Seed_quarter_scale.jpg?v=1704750624" width="300">
 
 https://www.electro-smith.com/daisy/daisy <br>
 Specialized Audio µC Hardware with inputs for Sensors. 
