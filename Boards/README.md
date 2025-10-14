@@ -124,7 +124,7 @@ https://zrna.org/akso
 ------------
 
 ## Raspberry Pi
-<img src="https://assets.raspberrypi.com/static/8f6eca535dbb23a21eb41a748050e3a0/33b96/16gb.webp" width="100%">
+<img src="https://assets.raspberrypi.com/static/8f6eca535dbb23a21eb41a748050e3a0/33b96/16gb.webp" width="300">
 
 https://www.raspberrypi.org/
 
