@@ -38,7 +38,7 @@ With special focus on usage for **D**igital **M**usic **I**nstruments
 ---------------
 
 ## Teensy
-<img src="[https://forum.pjrc.com/teensy40_front.jpg](https://www.pjrc.com/store/teensy40_front.jpg)" width="300">
+<img src="https://www.pjrc.com/store/teensy40_front.jpg" width="300">
 
 https://www.pjrc.com/teensy/
 
