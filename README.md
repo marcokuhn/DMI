@@ -9,12 +9,26 @@ Over the course of several iterations, concepts and ideas develop into refined f
 
 
 - [Designing Musical Instruments](#designing-musical-instruments)
+  - [Examples](#examples)
   - [Books](#books)
   - [Papers](#papers)
   - [Conferences](#conferences)
   - [Institutes / Labs](#institutes--labs)
   - [Artists](#artists)
   - [Stores](#stores)
+ 
+## Examples
+  - Max/Msp – Gamepad – https://www.youtube.com/watch?v=VOnwkz0rhR4
+  - Max/Msp – Mediapipe – https://www.youtube.com/shorts/T3JvdUbBX0g
+  - Max/Msp – Rave – INTRO https://www.youtube.com/watch?v=dMZs04TzxUI
+  - Max/Msp – Rave – embedded https://www.youtube.com/watch?v=jAIRf4nGgYI
+  - Max/Msp – dataknot – https://www.youtube.com/watch?v=rpSPZ40XamM&t=128s
+  - Teensy – PolySynth – https://youtu.be/KbcNqarBTsI?si=P3Jj8CwcJSCYJ9G1
+  - Daisy – SynthAcademy – Touch2 – https://youtu.be/ma7BDlRS8Kg?si=UyZhmEDtDbyoAi9h
+  - ESP32 – Ableton Live Controller – https://youtu.be/lJ3QJGBf-gc?si=HnMZKK4F80wFtwiC
+  - JUCE – How to Make Your First VST Plugin – https://youtu.be/4AIo4QpmPKI?si=NP_Jd-aMgG6E5Zcn
+  -  
+
 
 ## Books
 - Instruments for New Music: Sound, Technology, and Modernism. California: University of California – https://www.luminosoa.org/site/books/m/10.1525/luminos.7/
