@@ -23,6 +23,7 @@ Over the course of several iterations, concepts and ideas develop into refined f
   - Max/Msp – Rave – INTRO https://www.youtube.com/watch?v=dMZs04TzxUI
   - Max/Msp – Rave – embedded https://www.youtube.com/watch?v=jAIRf4nGgYI
   - Max/Msp – dataknot – https://www.youtube.com/watch?v=rpSPZ40XamM&t=128s
+  - Arduino – Sonic Glove – https://www.youtube.com/watch?v=0zsAzvbnwm4
   - Teensy – PolySynth – https://youtu.be/KbcNqarBTsI?si=P3Jj8CwcJSCYJ9G1
   - Daisy – SynthAcademy – Touch2 – https://youtu.be/ma7BDlRS8Kg?si=UyZhmEDtDbyoAi9h
   - ESP32 – Ableton Live Controller – https://youtu.be/lJ3QJGBf-gc?si=HnMZKK4F80wFtwiC
