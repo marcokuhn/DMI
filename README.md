@@ -27,7 +27,7 @@ Over the course of several iterations, concepts and ideas develop into refined f
   - Daisy – SynthAcademy – Touch2 – https://youtu.be/ma7BDlRS8Kg?si=UyZhmEDtDbyoAi9h
   - ESP32 – Ableton Live Controller – https://youtu.be/lJ3QJGBf-gc?si=HnMZKK4F80wFtwiC
   - JUCE – How to Make Your First VST Plugin – https://youtu.be/4AIo4QpmPKI?si=NP_Jd-aMgG6E5Zcn
-  -  
+  - WEB AUDIO – https://experiments.withgoogle.com/search?q=web%20audio  
 
 
 ## Books
